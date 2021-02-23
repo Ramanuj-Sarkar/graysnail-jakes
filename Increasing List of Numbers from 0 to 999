@@ -1,0 +1,36 @@
+POP a master_list "a0123456789"
+POP a ones_list a[master_list]
+POP a ones a
+POP a tens_list [ones_list]
+POP a tens a
+POP a hund_list [ones_list]
+POP a hund a
+POP a text a
+
+OUTPUT "Enter a desired number."
+INPUT desire
+OUTPUT "Enter what you want to separate the individual numbers."
+INPUT spacer
+OUTPUT "Enter 0 to include 0 at the beginning."
+INPUT zero?
+GOTO "change ones" [zero?] 0
+POP 0 ones_list [ones_list]
+GOTO "change ones" desire desire
+
+"change hund"
+POP hund hund_list [hund_list]
+POP a tens_list a[master_list]
+POP a ones_list a[master_list]
+"change tens"
+POP tens tens_list [tens_list]
+POP a ones_list a[master_list]
+GOTO "change hund" [tens] ""
+"change ones"
+POP ones ones_list [ones_list]
+GOTO "change tens" [ones] ""
+POP a text " [text][hund][tens][ones][spacer]"
+OUTPUT "This is your string of text:
+[text]"
+GOTO "end of code" [desire] "[hund][tens][ones]"
+GOTO "change ones" a a
+"end of code"
