@@ -97,5 +97,5 @@ OUTPUT "The eighteenth Fibonacci number is 2584."
 GOTO "end of code" x x
 
 "input=19"
-OUTPUT "The tenth Fibonacci number is 4181."
+OUTPUT "The nineteenth Fibonacci number is 4181."
 "end of code"
