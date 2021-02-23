@@ -1,0 +1,35 @@
+POP a maximum a"19"
+OUTPUT "Find the nth Fibonacci number from 1 to [maximum]."
+INPUT input
+POP a number a
+POP a nth a
+POP a text "aFrom 1 to [input]"
+POP a ordinal "a1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 "
+POP a fibonacci "a1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 X"
+
+"get number"
+POP temp fibonacci [fibonacci]
+GOTO "true end" [temp] X
+GOTO "get nth" [temp] " "
+POP a number a[number][temp]
+GOTO "get number" a a
+
+"get nth"
+POP temp ordinal [ordinal]
+GOTO "ordinal complete" [temp] " "
+POP a nth a[nth][temp]
+GOTO "get nth" a a
+"ordinal complete"
+
+POP a text "a[text]
+Fibonacci number #[nth] is [number]."
+OUTPUT [text]
+GOTO "good end" [input] [nth]
+
+POP a number a
+POP a nth a
+GOTO "get number" a a
+
+"true end"
+OUTPUT "You didn't input a number between 1 and [maximum]."
+"good end"
