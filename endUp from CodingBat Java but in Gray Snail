@@ -1,0 +1,136 @@
+POP a number a###
+POP a letter a
+POP a end a
+OUTPUT "Enter a string to undergo the procedure."
+INPUT original
+POP a reverse_this a[original]
+
+reversing
+POP a reversed a
+"reverse it"
+POP letter reverse_this [reverse_this]
+POP a reversed a[letter][reversed]
+GOTO "end reversal" "" [reverse_this]
+GOTO "reverse it" a a
+"end reversal"
+GOTO "end code" [number] ""
+
+"change letters"
+GOTO "enough changing" [number] ""
+POP temp number [number]
+POP letter reversed [reversed]
+GOTO "letter=a" [letter] a
+GOTO "letter=b" [letter] b
+GOTO "letter=c" [letter] c
+GOTO "letter=d" [letter] d
+GOTO "letter=e" [letter] e
+GOTO "letter=f" [letter] f
+GOTO "letter=g" [letter] g
+GOTO "letter=h" [letter] h
+GOTO "letter=i" [letter] i
+GOTO "letter=j" [letter] j
+GOTO "letter=k" [letter] k
+GOTO "letter=l" [letter] l
+GOTO "letter=m" [letter] m
+GOTO "letter=n" [letter] n
+GOTO "letter=o" [letter] o
+GOTO "letter=p" [letter] p
+GOTO "letter=q" [letter] q
+GOTO "letter=r" [letter] r
+GOTO "letter=s" [letter] s
+GOTO "letter=t" [letter] t
+GOTO "letter=u" [letter] u
+GOTO "letter=v" [letter] v
+GOTO "letter=w" [letter] w
+GOTO "letter=x" [letter] x
+GOTO "letter=y" [letter] y
+GOTO "letter=z" [letter] z
+"single letter changed"
+POP a end a[end][letter]
+GOTO "change letters" a a
+
+"enough changing"
+POP a reverse_this a[end][reversed]
+GOTO reversing a a
+
+"letter=a"
+POP a letter aA
+GOTO "single letter changed" a a
+"letter=b"
+POP a letter aB
+GOTO "single letter changed" a a
+"letter=c"
+POP a letter aC
+GOTO "single letter changed" a a
+"letter=d"
+POP a letter aD
+GOTO "single letter changed" a a
+"letter=e"
+POP a letter aE
+GOTO "single letter changed" a a
+"letter=f"
+POP a letter aF
+GOTO "single letter changed" a a
+"letter=g"
+POP a letter aG
+GOTO "single letter changed" a a
+"letter=h"
+POP a letter aH
+GOTO "single letter changed" a a
+"letter=i"
+POP a letter aI
+GOTO "single letter changed" a a
+"letter=j"
+POP a letter aJ
+GOTO "single letter changed" a a
+"letter=k"
+POP a letter aK
+GOTO "single letter changed" a a
+"letter=l"
+POP a letter aL
+GOTO "single letter changed" a a
+"letter=m"
+POP a letter aM
+GOTO "single letter changed" a a
+"letter=n"
+POP a letter aN
+GOTO "single letter changed" a a
+"letter=o"
+POP a letter aO
+GOTO "single letter changed" a a
+"letter=p"
+POP a letter aP
+GOTO "single letter changed" a a
+"letter=q"
+POP a letter aQ
+GOTO "single letter changed" a a
+"letter=r"
+POP a letter aR
+GOTO "single letter changed" a a
+"letter=s"
+POP a letter aS
+GOTO "single letter changed" a a
+"letter=t"
+POP a letter aT
+GOTO "single letter changed" a a
+"letter=u"
+POP a letter aU
+GOTO "single letter changed" a a
+"letter=v"
+POP a letter aV
+GOTO "single letter changed" a a
+"letter=w"
+POP a letter aW
+GOTO "single letter changed" a a
+"letter=x"
+POP a letter aX
+GOTO "single letter changed" a a
+"letter=y"
+POP a letter aY
+GOTO "single letter changed" a a
+"letter=z"
+POP a letter aZ
+GOTO "single letter changed" a a
+
+"end code"
+OUTPUT [reversed]
