@@ -1,0 +1,119 @@
+POP a letter a
+POP a new a
+OUTPUT "Enter a string to undergo the procedure."
+INPUT original
+
+"change letters"
+GOTO "end code" [original] ""
+POP letter original [original]
+GOTO "letter=A" [letter] A
+GOTO "letter=B" [letter] B
+GOTO "letter=C" [letter] C
+GOTO "letter=D" [letter] D
+GOTO "letter=E" [letter] E
+GOTO "letter=F" [letter] F
+GOTO "letter=G" [letter] G
+GOTO "letter=H" [letter] H
+GOTO "letter=I" [letter] I
+GOTO "letter=J" [letter] J
+GOTO "letter=K" [letter] K
+GOTO "letter=L" [letter] L
+GOTO "letter=M" [letter] M
+GOTO "letter=N" [letter] N
+GOTO "letter=O" [letter] O
+GOTO "letter=P" [letter] P
+GOTO "letter=Q" [letter] Q
+GOTO "letter=R" [letter] R
+GOTO "letter=S" [letter] S
+GOTO "letter=T" [letter] T
+GOTO "letter=U" [letter] U
+GOTO "letter=V" [letter] V
+GOTO "letter=W" [letter] W
+GOTO "letter=X" [letter] X
+GOTO "letter=Y" [letter] Y
+GOTO "letter=Z" [letter] Z
+"single letter changed"
+POP a new a[new][letter]
+GOTO "change letters" a a
+
+"letter=A"
+POP a letter aa
+GOTO "single letter changed" a a
+"letter=B"
+POP a letter ab
+GOTO "single letter changed" a a
+"letter=C"
+POP a letter ac
+GOTO "single letter changed" a a
+"letter=D"
+POP a letter ad
+GOTO "single letter changed" a a
+"letter=E"
+POP a letter ae
+GOTO "single letter changed" a a
+"letter=F"
+POP a letter af
+GOTO "single letter changed" a a
+"letter=G"
+POP a letter ag
+GOTO "single letter changed" a a
+"letter=H"
+POP a letter ah
+GOTO "single letter changed" a a
+"letter=I"
+POP a letter ai
+GOTO "single letter changed" a a
+"letter=J"
+POP a letter aj
+GOTO "single letter changed" a a
+"letter=K"
+POP a letter ak
+GOTO "single letter changed" a a
+"letter=L"
+POP a letter al
+GOTO "single letter changed" a a
+"letter=M"
+POP a letter am
+GOTO "single letter changed" a a
+"letter=N"
+POP a letter an
+GOTO "single letter changed" a a
+"letter=O"
+POP a letter ao
+GOTO "single letter changed" a a
+"letter=P"
+POP a letter ap
+GOTO "single letter changed" a a
+"letter=Q"
+POP a letter aq
+GOTO "single letter changed" a a
+"letter=R"
+POP a letter ar
+GOTO "single letter changed" a a
+"letter=S"
+POP a letter as
+GOTO "single letter changed" a a
+"letter=T"
+POP a letter at
+GOTO "single letter changed" a a
+"letter=U"
+POP a letter au
+GOTO "single letter changed" a a
+"letter=V"
+POP a letter av
+GOTO "single letter changed" a a
+"letter=W"
+POP a letter aw
+GOTO "single letter changed" a a
+"letter=X"
+POP a letter ax
+GOTO "single letter changed" a a
+"letter=Y"
+POP a letter ay
+GOTO "single letter changed" a a
+"letter=Z"
+POP a letter az
+GOTO "single letter changed" a a
+
+"end code"
+OUTPUT [new]
