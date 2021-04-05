@@ -1,0 +1,11 @@
+"Do not delete ANY double spaces or spaces at the end of the lines!"
+OUTPUT "Enter a string to reverse."
+INPUT input
+POP  output 
+"keep looping"
+POP char input [input]
+POP  output A[char][output]
+GOTO "stop looping" [input] 
+GOTO "keep looping"
+"stop looping"
+OUTPUT [output]
