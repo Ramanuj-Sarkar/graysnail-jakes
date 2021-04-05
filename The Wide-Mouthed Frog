@@ -1,0 +1,126 @@
+"mouth size method"
+POP a letter a
+POP a new a
+INPUT animal
+
+"change letters"
+GOTO "change mouth" [animal] ""
+POP letter animal [animal]
+GOTO "letter=A" [letter] A
+GOTO "letter=B" [letter] B
+GOTO "letter=C" [letter] C
+GOTO "letter=D" [letter] D
+GOTO "letter=E" [letter] E
+GOTO "letter=F" [letter] F
+GOTO "letter=G" [letter] G
+GOTO "letter=H" [letter] H
+GOTO "letter=I" [letter] I
+GOTO "letter=J" [letter] J
+GOTO "letter=K" [letter] K
+GOTO "letter=L" [letter] L
+GOTO "letter=M" [letter] M
+GOTO "letter=N" [letter] N
+GOTO "letter=O" [letter] O
+GOTO "letter=P" [letter] P
+GOTO "letter=Q" [letter] Q
+GOTO "letter=R" [letter] R
+GOTO "letter=S" [letter] S
+GOTO "letter=T" [letter] T
+GOTO "letter=U" [letter] U
+GOTO "letter=V" [letter] V
+GOTO "letter=W" [letter] W
+GOTO "letter=X" [letter] X
+GOTO "letter=Y" [letter] Y
+GOTO "letter=Z" [letter] Z
+"single letter changed"
+POP a new a[new][letter]
+GOTO "change letters"
+
+"change mouth"
+GOTO "small mouth" [new] "alligator"
+OUTPUT "wide"
+GOTO end
+"small mouth"
+OUTPUT "small"
+GOTO end
+
+"letter=A"
+POP a letter aa
+GOTO "single letter changed"
+"letter=B"
+POP a letter ab
+GOTO "single letter changed"
+"letter=C"
+POP a letter ac
+GOTO "single letter changed"
+"letter=D"
+POP a letter ad
+GOTO "single letter changed"
+"letter=E"
+POP a letter ae
+GOTO "single letter changed"
+"letter=F"
+POP a letter af
+GOTO "single letter changed"
+"letter=G"
+POP a letter ag
+GOTO "single letter changed"
+"letter=H"
+POP a letter ah
+GOTO "single letter changed"
+"letter=I"
+POP a letter ai
+GOTO "single letter changed"
+"letter=J"
+POP a letter aj
+GOTO "single letter changed"
+"letter=K"
+POP a letter ak
+GOTO "single letter changed"
+"letter=L"
+POP a letter al
+GOTO "single letter changed"
+"letter=M"
+POP a letter am
+GOTO "single letter changed"
+"letter=N"
+POP a letter an
+GOTO "single letter changed"
+"letter=O"
+POP a letter ao
+GOTO "single letter changed"
+"letter=P"
+POP a letter ap
+GOTO "single letter changed"
+"letter=Q"
+POP a letter aq
+GOTO "single letter changed"
+"letter=R"
+POP a letter ar
+GOTO "single letter changed"
+"letter=S"
+POP a letter as
+GOTO "single letter changed"
+"letter=T"
+POP a letter at
+GOTO "single letter changed"
+"letter=U"
+POP a letter au
+GOTO "single letter changed"
+"letter=V"
+POP a letter av
+GOTO "single letter changed"
+"letter=W"
+POP a letter aw
+GOTO "single letter changed"
+"letter=X"
+POP a letter ax
+GOTO "single letter changed"
+"letter=Y"
+POP a letter ay
+GOTO "single letter changed"
+"letter=Z"
+POP a letter az
+GOTO "single letter changed"
+
+end
