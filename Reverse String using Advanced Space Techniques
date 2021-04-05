@@ -1,0 +1,10 @@
+OUTPUT "Enter a string to reverse."
+INPUT input
+POP  output 
+"keep looping"
+POP char input [input]
+POP  output a[char][output]
+GOTO "stop looping" [input] 
+GOTO "keep looping"
+"stop looping"
+OUTPUT [output]
