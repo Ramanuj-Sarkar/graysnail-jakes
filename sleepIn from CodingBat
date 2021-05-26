@@ -1,0 +1,12 @@
+"#0 is assumed to mean false."
+"#1 is assumed to mean true."
+
+INPUT weekday
+INPUT vacation
+GOTO "output 1" 1 [vacation]
+GOTO "output 1" 1 [weekday]
+OUTPUT 0
+GOTO "end"
+"output 1"
+OUTPUT 1
+"end"
