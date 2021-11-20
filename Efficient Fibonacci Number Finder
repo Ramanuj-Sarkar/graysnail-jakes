@@ -1,4 +1,4 @@
-POP x maximum x"19"
+POP a maximum a19
 
 OUTPUT "Find the nth Fibonacci number from 1 to [maximum]."
 INPUT input
@@ -22,80 +22,80 @@ GOTO "input=17" [input] 17
 GOTO "input=18" [input] 18
 GOTO "input=19" [input] 19
 OUTPUT "You had to enter a number between 1 and 19. Now you can't do that."
-GOTO "end of code" x x
+GOTO end
 
 "input=1"
 OUTPUT "The first Fibonacci number is 1."
-GOTO "end of code" x x
+GOTO end
 
 "input=2"
 OUTPUT "The second Fibonacci number is 1."
-GOTO "end of code" x x
+GOTO end
 
 "input=3"
 OUTPUT "The third Fibonacci number is 2."
-GOTO "end of code" x x
+GOTO end
 
 "input=4"
 OUTPUT "The fourth Fibonacci number is 3."
-GOTO "end of code" x x
+GOTO end
 
 "input=5"
 OUTPUT "The fifth Fibonacci number is 5."
-GOTO "end of code" x x
+GOTO end
 
 "input=6"
 OUTPUT "The sixth Fibonacci number is 8."
-GOTO "end of code" x x
+GOTO end
 
 "input=7"
 OUTPUT "The seventh Fibonacci number is 13."
-GOTO "end of code" x x
+GOTO end
 
 "input=8"
 OUTPUT "The eighth Fibonacci number is 21."
-GOTO "end of code" x x
+GOTO end
 
 "input=9"
 OUTPUT "The ninth Fibonacci number is 34."
-GOTO "end of code" x x
+GOTO end
 
 "input=10"
 OUTPUT "The tenth Fibonacci number is 55."
-GOTO "end of code" x x
+GOTO end
 
 "input=11"
 OUTPUT "The eleventh Fibonacci number is 89."
-GOTO "end of code" x x
+GOTO end
 
 "input=12"
 OUTPUT "The twelfth Fibonacci number is 144."
-GOTO "end of code" x x
+GOTO end
 
 "input=13"
 OUTPUT "The thirteenth Fibonacci number is 233."
-GOTO "end of code" x x
+GOTO end
 
 "input=14"
 OUTPUT "The fourteenth Fibonacci number is 377."
-GOTO "end of code" x x
+GOTO end
 
 "input=15"
 OUTPUT "The fifteenth Fibonacci number is 610."
-GOTO "end of code" x x
+GOTO end
 
 "input=16"
 OUTPUT "The sixteenth Fibonacci number is 987."
-GOTO "end of code" x x
+GOTO end
 
 "input=17"
 OUTPUT "The seventeenth Fibonacci number is 1597."
-GOTO "end of code" x x
+GOTO end
 
 "input=18"
 OUTPUT "The eighteenth Fibonacci number is 2584."
-GOTO "end of code" x x
+GOTO end
 
 "input=19"
 OUTPUT "The nineteenth Fibonacci number is 4181."
-"end of code"
+end
