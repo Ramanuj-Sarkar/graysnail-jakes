@@ -1,0 +1,89 @@
+"#I use carry to indicate 0 has been decremented to 9."
+POP a carry a0
+INPUT number
+
+"#These are all the digits of the number."
+POP hundreds number [number]
+POP tens number [number]
+POP ones number [number]
+
+POP a digit aones
+"#This will go to decrement 1, decrement 2, etc. depending on what ones is."
+GOTO "decrement [ones]"
+"finished with decrement"
+"#If carry = 0, I can stop decrementing."
+GOTO "completely finished with decrement" [carry] 0
+"#If digit is hundreds, no more decrementing is possible."
+GOTO "completely finished with decrement" [digit] hundreds
+"#This is in case we have just decremented tens, so we have to decrement hundreds."
+GOTO "digit is tens" [digit] tens
+POP a digit atens
+GOTO "decrement [tens]"
+"digit is tens"
+POP a digit ahundreds
+GOTO "decrement [hundreds]"
+"completely finished with decrement"
+
+"#In this Brainfk implementation, 999 turns to 255."
+GOTO "999 to 255" [hundreds][tens][ones] 999
+POP a numbers a[hundreds][tens][ones]
+"numbers is decremented"
+OUTPUT [numbers]
+POP a carry a0
+GOTO end
+
+"This is the place where 999 is wrapped around to 255."
+"999 to 255"
+POP a numbers a255
+GOTO "numbers is decremented"
+
+"decrement 0"
+POP a [digit] a9
+POP a carry a1
+GOTO "finished with decrement"
+
+"decrement 1"
+POP a [digit] a0
+POP a carry a0
+GOTO "finished with decrement"
+
+"decrement 2"
+POP a [digit] a1
+POP a carry a0
+GOTO "finished with decrement"
+
+"decrement 3"
+POP a [digit] a2
+POP a carry a0
+GOTO "finished with decrement"
+
+"decrement 4"
+POP a [digit] a3
+POP a carry a0
+GOTO "finished with decrement"
+
+"decrement 5"
+POP a [digit] a4
+POP a carry a0
+GOTO "finished with decrement"
+
+"decrement 6"
+POP a [digit] a5
+POP a carry a0
+GOTO "finished with decrement"
+
+"decrement 7"
+POP a [digit] a6
+POP a carry a0
+GOTO "finished with decrement"
+
+"decrement 8"
+POP a [digit] a7
+POP a carry a0
+GOTO "finished with decrement"
+
+"decrement 9"
+POP a [digit] a8
+POP a carry a0
+GOTO "finished with decrement"
+end
