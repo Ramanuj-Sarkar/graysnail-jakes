@@ -15,7 +15,7 @@ OUTPUT "Enter 0 to include 0 at the beginning."
 INPUT zero?
 GOTO "change ones" [zero?] 0
 POP 0 ones_list [ones_list]
-GOTO "change ones" desire desire
+GOTO "change ones" a a
 
 "change hund"
 POP hund hund_list [hund_list]
