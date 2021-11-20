@@ -1,9 +1,11 @@
+POP a ones a1
 INPUT 01
 GOTO zero 0 [01]
 GOTO infinite 1 [01]
 GOTO end a a
 infinite
-OUTPUT 1
+OUTPUT [ones]
+POP a ones a[ones]1
 GOTO infinite a a
 zero
 OUTPUT 0
