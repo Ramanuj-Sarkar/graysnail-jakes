@@ -1,0 +1,67 @@
+POP a carry a0
+INPUT number
+POP hundreds number [number]
+POP tens number [number]
+POP ones number [number]
+POP a digit aones
+GOTO "increment [ones]"
+"finished with increment"
+GOTO "completely finished with increment" [carry] 0
+GOTO "completely finished with increment" [digit] hundreds
+GOTO "digit is tens" [digit] tens
+POP a digit atens
+GOTO "increment [tens]"
+"digit is tens"
+POP a digit ahundreds
+GOTO "increment [hundreds]"
+"completely finished with increment"
+GOTO "256 to 000" [hundreds][tens][ones] 256
+POP a numbers a[hundreds][tens][ones]
+"numbers is incremented"
+OUTPUT [numbers]
+POP a carry a0
+GOTO end
+"256 to 000"
+POP a numbers a000
+GOTO "numbers is incremented"
+"increment 0"
+POP a [digit] a1
+POP a carry a0
+GOTO "finished with increment"
+"increment 1"
+POP a [digit] a2
+POP a carry a0
+GOTO "finished with increment"
+"increment 2"
+POP a [digit] a3
+POP a carry a0
+GOTO "finished with increment"
+"increment 3"
+POP a [digit] a4
+POP a carry a0
+GOTO "finished with increment"
+"increment 4"
+POP a [digit] a5
+POP a carry a0
+GOTO "finished with increment"
+"increment 5"
+POP a [digit] a6
+POP a carry a0
+GOTO "finished with increment"
+"increment 6"
+POP a [digit] a7
+POP a carry a0
+GOTO "finished with increment"
+"increment 7"
+POP a [digit] a8
+POP a carry a0
+GOTO "finished with increment"
+"increment 8"
+POP a [digit] a9
+POP a carry a0
+GOTO "finished with increment"
+"increment 9"
+POP a [digit] a0
+POP a carry a1
+GOTO "finished with increment"
+end
