@@ -28,8 +28,8 @@ POP hundreds temp [temp]
 POP tens temp [temp]
 POP ones temp [temp]
 GOTO "s command" [instruction] s
-GOTO "d command" [instruction] d
-GOTO "i command" [instruction] i
+GOTO "di command" [instruction] d
+GOTO "di command" [instruction] i
 
 "#It was not a valid command."
 POP a "all input" a"[all input][instruction][newline][newline]>>"
@@ -48,21 +48,21 @@ GOTO "square 30" [number] 030
 GOTO "square 31" [number] 031
 GOTO "to 000"
 
-"d command"
+"di command"
 POP a "all input" a"[all input][instruction][newline]>>"
 POP a digit aones
 "#This will go to i 1, d 1, i 2, d 2, etc. depending on what instruction and ones are."
 GOTO "[instruction] [ones]"
 "finished with one operation"
-"#If carry = 0, I can stop decrementing."
+"#If carry = 0, I can stop doing this."
 GOTO "completely finished" [carry] 0
-"#If digit is hundreds, no more decrementing is possible."
+"#If digit is hundreds, no more changing is possible."
 GOTO "completely finished" [digit] hundreds
-"#This is in case we have just decremented tens, so we have to decrement hundreds."
-GOTO "decrement digit is tens" [digit] tens
+"#This is in case we have just changed tens, so we have to change hundreds."
+GOTO "digit is tens" [digit] tens
 POP a digit atens
 GOTO "[instruction] [tens]"
-"decrement digit is tens"
+"digit is tens"
 POP a digit ahundreds
 GOTO "[instruction] [hundreds]"
 
@@ -79,24 +79,6 @@ GOTO "analyse commands"
 "to 000"
 POP a number a000
 GOTO "number is changed"
-
-"i command"
-POP a "all input" a"[all input]i[newline]>>"
-POP a digit aones
-"#This will go to i 1, i 2, etc. depending on what ones is."
-GOTO "[instruction] [ones]"
-"finished with increment"
-"#If carry = 0, I can stop incrementing."
-GOTO "completely finished" [carry] 0
-"#I capped the amount of digits at 3."
-GOTO "completely finished" [digit] hundreds
-"#This is in case we have just incremented tens, so we have to increment hundreds."
-GOTO "increment digit is tens" [digit] tens
-POP a digit atens
-GOTO "[instruction] [tens]"
-"increment digit is tens"
-POP a digit ahundreds
-GOTO "[instruction] [hundreds]"
 
 "#From here on out, the code consists of single commands which do one or two operations."
 
@@ -279,4 +261,6 @@ GOTO "analyse commands"
 "square 31"
 POP a number a961
 GOTO "analyse commands"
+
+"#I put end here because the interpreter stops reading when it reaches the end of the file."
 end
