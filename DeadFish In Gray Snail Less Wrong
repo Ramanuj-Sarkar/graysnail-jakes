@@ -1,0 +1,300 @@
+"#This is the number DeadFish works on."
+POP a numbers a000
+"#This shows the numbers during output and is updated when the command is o."
+POP a "show numbers" a
+"#I use carry to indicate repetition for incrementing (9 to 0) and decrementing (0 to 9)."
+POP a carry a0
+POP a "all input" a">>"
+"input more commands"
+OUTPUT "[all input]"
+INPUT commands
+"analyse commands"
+OUTPUT "[all input]"
+POP instruction commands [commands]
+GOTO "input more commands" [instruction] ""
+GOTO "o command" [instruction] o
+"#These are all the digits of the number."
+"#Temp is used in case the command is not valid."
+POP a temp a[numbers]
+POP hundreds temp [temp]
+POP tens temp [temp]
+POP ones temp [temp]
+GOTO "s command" [instruction] s
+GOTO "d command" [instruction] d
+GOTO "i command" [instruction] i
+"#It was not a valid command."
+POP a "all input" a"[all input][instruction]
+
+>>"
+GOTO "analyse commands"
+"o command"
+POP a "all input" a"[all input]o
+[numbers]
+>>"
+GOTO "analyse commands"
+"s command"
+POP a "all input" a"[all input]s
+>>"
+GOTO "possibly valid square" [hundreds] 0
+GOTO "to 000"
+"possibly valid square"
+GOTO "square 00" [numbers] 000
+GOTO "square 01" [numbers] 001
+GOTO "square 02" [numbers] 002
+GOTO "square 03" [numbers] 003
+GOTO "square 04" [numbers] 004
+GOTO "square 05" [numbers] 005
+GOTO "square 06" [numbers] 006
+GOTO "square 07" [numbers] 007
+GOTO "square 08" [numbers] 008
+GOTO "square 09" [numbers] 009
+GOTO "square 10" [numbers] 010
+GOTO "square 11" [numbers] 011
+GOTO "square 12" [numbers] 012
+GOTO "square 13" [numbers] 013
+GOTO "square 14" [numbers] 014
+GOTO "square 15" [numbers] 015
+GOTO "square 17" [numbers] 017
+GOTO "square 18" [numbers] 018
+GOTO "square 19" [numbers] 019
+GOTO "square 20" [numbers] 020
+GOTO "square 21" [numbers] 021
+GOTO "square 22" [numbers] 022
+GOTO "square 23" [numbers] 023
+GOTO "square 24" [numbers] 024
+GOTO "square 25" [numbers] 025
+GOTO "square 26" [numbers] 026
+GOTO "square 27" [numbers] 027
+GOTO "square 28" [numbers] 028
+GOTO "square 29" [numbers] 029
+GOTO "square 30" [numbers] 030
+GOTO "square 31" [numbers] 031
+GOTO "to 000"
+"d command"
+POP a "all input" a"[all input]d
+>>"
+POP a digit aones
+"#This will go to decrement 1, decrement 2, etc. depending on what ones is."
+GOTO "decrement [ones]"
+"finished with decrement"
+"#If carry = 0, I can stop decrementing."
+GOTO "completely finished with increment/decrement" [carry] 0
+"#If digit is hundreds, no more decrementing is possible."
+GOTO "completely finished with increment/decrement" [digit] hundreds
+"#This is in case we have just decremented tens, so we have to decrement hundreds."
+GOTO "decrement digit is tens" [digit] tens
+POP a digit atens
+GOTO "decrement [tens]"
+"decrement digit is tens"
+POP a digit ahundreds
+GOTO "decrement [hundreds]"
+"completely finished with increment/decrement"
+"#In DeadFish implementation, 256 and 0-1 (999 in this case) become 0."
+GOTO "to 000" [hundreds][tens][ones] 256
+GOTO "to 000" [hundreds][tens][ones] 999
+POP a numbers a[hundreds][tens][ones]
+"numbers is changed"
+POP a carry a0
+GOTO "analyse commands"
+"#Numbers is just set to 000."
+"to 000"
+POP a numbers a000
+GOTO "numbers is changed"
+"i command"
+POP a "all input" a"[all input]i
+>>"
+POP a digit aones
+"#This will go to increment 1, increment 2, etc. depending on what ones is."
+GOTO "increment [ones]"
+"finished with increment"
+"#If carry = 0, I can stop incrementing."
+GOTO "completely finished with increment/decrement" [carry] 0
+"#I capped the amount of digits at 3."
+GOTO "completely finished with increment/decrement" [digit] hundreds
+"#This is in case we have just incremented tens, so we have to increment hundreds."
+GOTO "increment digit is tens" [digit] tens
+POP a digit atens
+GOTO "increment [tens]"
+"increment digit is tens"
+POP a digit ahundreds
+GOTO "increment [hundreds]"
+"#The variable carry becomes 1 here."
+"decrement 0"
+POP a [digit] a9
+POP a carry a1
+GOTO "finished with decrement"
+"decrement 1"
+POP a [digit] a0
+POP a carry a0
+GOTO "finished with decrement"
+"decrement 2"
+POP a [digit] a1
+POP a carry a0
+GOTO "finished with decrement"
+"decrement 3"
+POP a [digit] a2
+POP a carry a0
+GOTO "finished with decrement"
+"decrement 4"
+POP a [digit] a3
+POP a carry a0
+GOTO "finished with decrement"
+"decrement 5"
+POP a [digit] a4
+POP a carry a0
+GOTO "finished with decrement"
+"decrement 6"
+POP a [digit] a5
+POP a carry a0
+GOTO "finished with decrement"
+"decrement 7"
+POP a [digit] a6
+POP a carry a0
+GOTO "finished with decrement"
+"decrement 8"
+POP a [digit] a7
+POP a carry a0
+GOTO "finished with decrement"
+"decrement 9"
+POP a [digit] a8
+POP a carry a0
+GOTO "finished with decrement"
+"#The variable carry becomes 1 here."
+"increment 0"
+POP a [digit] a1
+POP a carry a0
+GOTO "finished with increment"
+"increment 1"
+POP a [digit] a2
+POP a carry a0
+GOTO "finished with increment"
+"increment 2"
+POP a [digit] a3
+POP a carry a0
+GOTO "finished with increment"
+"increment 3"
+POP a [digit] a4
+POP a carry a0
+GOTO "finished with increment"
+"increment 4"
+POP a [digit] a5
+POP a carry a0
+GOTO "finished with increment"
+"increment 5"
+POP a [digit] a6
+POP a carry a0
+GOTO "finished with increment"
+"increment 6"
+POP a [digit] a7
+POP a carry a0
+GOTO "finished with increment"
+"increment 7"
+POP a [digit] a8
+POP a carry a0
+GOTO "finished with increment"
+"increment 8"
+POP a [digit] a9
+POP a carry a0
+GOTO "finished with increment"
+"increment 9"
+POP a [digit] a0
+POP a carry a1
+GOTO "finished with increment"
+"square 00"
+POP a numbers a000
+GOTO "analyse commands"
+"square 01"
+POP a numbers a001
+GOTO "analyse commands"
+"square 02"
+POP a numbers a004
+GOTO "analyse commands"
+"square 03"
+POP a numbers a009
+GOTO "analyse commands"
+"square 04"
+POP a numbers a016
+GOTO "analyse commands"
+"square 05"
+POP a numbers a025
+GOTO "analyse commands"
+"square 06"
+POP a numbers a036
+GOTO "analyse commands"
+"square 07"
+POP a numbers a049
+GOTO "analyse commands"
+"square 08"
+POP a numbers a064
+GOTO "analyse commands"
+"square 09"
+POP a numbers a081
+GOTO "analyse commands"
+"square 10"
+POP a numbers a100
+GOTO "analyse commands"
+"square 11"
+POP a numbers a121
+GOTO "analyse commands"
+"square 12"
+POP a numbers a144
+GOTO "analyse commands"
+"square 13"
+POP a numbers a169
+GOTO "analyse commands"
+"square 14"
+POP a numbers a196
+GOTO "analyse commands"
+"square 15"
+POP a numbers a225
+GOTO "analyse commands"
+"#16 squared is 256, so that's what I put here."
+"#I could have stopped here and been fine."
+"#However, I decided to implement the others"
+"#because I think it runs faster."
+"square 17"
+POP a numbers a289
+GOTO "analyse commands"
+"square 18"
+POP a numbers a324
+GOTO "analyse commands"
+"square 19"
+POP a numbers a361
+GOTO "analyse commands"
+"square 20"
+POP a numbers a400
+GOTO "analyse commands"
+"square 21"
+POP a numbers a441
+GOTO "analyse commands"
+"square 22"
+POP a numbers a484
+GOTO "analyse commands"
+"square 23"
+POP a numbers a529
+GOTO "analyse commands"
+"square 24"
+POP a numbers a576
+GOTO "analyse commands"
+"square 25"
+POP a numbers a625
+GOTO "analyse commands"
+"square 26"
+POP a numbers a676
+GOTO "analyse commands"
+"square 27"
+POP a numbers a729
+GOTO "analyse commands"
+"square 28"
+POP a numbers a784
+GOTO "analyse commands"
+"square 29"
+POP a numbers a841
+GOTO "analyse commands"
+"square 30"
+POP a numbers a900
+GOTO "analyse commands"
+"square 31"
+POP a numbers a961
+GOTO "analyse commands"
+end
