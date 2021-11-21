@@ -1,0 +1,66 @@
+"#This provides padding for the data."
+POP a padding a
+
+"#This is what gets printed."
+POP a "printed data" a""
+
+OUTPUT "Input program."
+INPUT program
+
+POP a temp a[program]
+"check program"
+GOTO "program done" [temp] ""
+POP char temp [temp]
+GOTO "check program" [char] 0
+GOTO "check program" [char] 1
+GOTO end
+"program done"
+
+OUTPUT "Input data."
+INPUT data
+
+POP a temp a[data]
+"check data"
+GOTO "data done" [temp] ""
+POP char temp [temp]
+GOTO "check data" [char] 0
+GOTO "check data" [char] 1
+GOTO end
+"data done"
+
+"infinite while loop"
+
+GOTO "get first char" "[printed data]" ""
+OUTPUT "[printed data]"
+INPUT ok
+GOTO end [data] ""
+
+"get first char"
+POP "first char" program [program]
+POP a program a"[program][first char]"
+GOTO "1 case" "[first char]" 1
+
+"#This occurs for 0."
+POP a "printed data" a"[printed data] [first char]|[padding][data]
+"
+POP a padding a"[padding] "
+POP discard data [data]
+GOTO "infinite while loop"
+
+"1 case"
+POP "second char" program [program]
+POP a program a"[program][second char]"
+
+"#Updates the output."
+POP a "printed data" a"[printed data][first char][second char]|[padding][data]
+"
+POP "check if 1" data [data]
+GOTO "left of data is 1" "[check if 1]" 1
+POP a data a"[check if 1][data]"
+GOTO "infinite while loop"
+
+"left of data is 1"
+POP a data a"[check if 1][data][second char]"
+GOTO "infinite while loop"
+
+end
