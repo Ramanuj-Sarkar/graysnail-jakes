@@ -1,5 +1,5 @@
-POP a numbers a000
-POP a "show numbers" a
+POP a number a000
+POP a "show number" a
 POP a carry a0
 POP a newline a"
 "
@@ -12,263 +12,222 @@ OUTPUT "[all input]"
 POP instruction commands [commands]
 GOTO "input more commands" [instruction] ""
 GOTO "o command" [instruction] o
-POP a temp a[numbers]
+POP a temp a[number]
 POP hundreds temp [temp]
 POP tens temp [temp]
 POP ones temp [temp]
 GOTO "s command" [instruction] s
-GOTO "d command" [instruction] d
-GOTO "i command" [instruction] i
-"#It was not a valid command."
+GOTO "di command" [instruction] d
+GOTO "di command" [instruction] i
 POP a "all input" a"[all input][instruction][newline][newline]>>"
 GOTO "analyse commands"
 "o command"
-POP a "all input" a"[all input]o[newline][numbers][newline]>>"
+POP a "all input" a"[all input]o[newline][number][newline]>>"
 GOTO "analyse commands"
 "s command"
 POP a "all input" a"[all input]s[newline]>>"
-GOTO "possibly valid square" [hundreds] 0
+GOTO "square 0[ones]" [number] 00[ones]
+GOTO "square 1[ones]" [number] 01[ones]
+GOTO "square 2[ones]" [number] 02[ones]
+GOTO "square 30" [number] 030
+GOTO "square 31" [number] 031
 GOTO "to 000"
-"possibly valid square"
-GOTO "square 00" [numbers] 000
-GOTO "square 01" [numbers] 001
-GOTO "square 02" [numbers] 002
-GOTO "square 03" [numbers] 003
-GOTO "square 04" [numbers] 004
-GOTO "square 05" [numbers] 005
-GOTO "square 06" [numbers] 006
-GOTO "square 07" [numbers] 007
-GOTO "square 08" [numbers] 008
-GOTO "square 09" [numbers] 009
-GOTO "square 10" [numbers] 010
-GOTO "square 11" [numbers] 011
-GOTO "square 12" [numbers] 012
-GOTO "square 13" [numbers] 013
-GOTO "square 14" [numbers] 014
-GOTO "square 15" [numbers] 015
-GOTO "square 17" [numbers] 017
-GOTO "square 18" [numbers] 018
-GOTO "square 19" [numbers] 019
-GOTO "square 20" [numbers] 020
-GOTO "square 21" [numbers] 021
-GOTO "square 22" [numbers] 022
-GOTO "square 23" [numbers] 023
-GOTO "square 24" [numbers] 024
-GOTO "square 25" [numbers] 025
-GOTO "square 26" [numbers] 026
-GOTO "square 27" [numbers] 027
-GOTO "square 28" [numbers] 028
-GOTO "square 29" [numbers] 029
-GOTO "square 30" [numbers] 030
-GOTO "square 31" [numbers] 031
-GOTO "to 000"
-"d command"
-POP a "all input" a"[all input]d[newline]>>"
+"di command"
+POP a "all input" a"[all input][instruction][newline]>>"
 POP a digit aones
-GOTO "decrement [ones]"
-"finished with decrement"
-GOTO "completely finished with increment/decrement" [carry] 0
-GOTO "completely finished with increment/decrement" [digit] hundreds
-GOTO "decrement digit is tens" [digit] tens
+GOTO "[instruction] [ones]"
+"finished with one operation"
+GOTO "completely finished" [carry] 0
+GOTO "completely finished" [digit] hundreds
+GOTO "digit is tens" [digit] tens
 POP a digit atens
-GOTO "decrement [tens]"
-"decrement digit is tens"
+GOTO "[instruction] [tens]"
+"digit is tens"
 POP a digit ahundreds
-GOTO "decrement [hundreds]"
-"completely finished with increment/decrement"
+GOTO "[instruction] [hundreds]"
+"completely finished"
 GOTO "to 000" [hundreds][tens][ones] 256
 GOTO "to 000" [hundreds][tens][ones] 999
-POP a numbers a[hundreds][tens][ones]
-"numbers is changed"
+POP a number a[hundreds][tens][ones]
+"number is changed"
 POP a carry a0
 GOTO "analyse commands"
 "to 000"
-POP a numbers a000
-GOTO "numbers is changed"
-"i command"
-POP a "all input" a"[all input]i[newline]>>"
-POP a digit aones
-GOTO "increment [ones]"
-"finished with increment"
-GOTO "completely finished with increment/decrement" [carry] 0
-GOTO "completely finished with increment/decrement" [digit] hundreds
-GOTO "increment digit is tens" [digit] tens
-POP a digit atens
-GOTO "increment [tens]"
-"increment digit is tens"
-POP a digit ahundreds
-GOTO "increment [hundreds]"
-"decrement 0"
+POP a number a000
+GOTO "number is changed"
+"d 0"
 POP a [digit] a9
 POP a carry a1
-GOTO "finished with decrement"
-"decrement 1"
+GOTO "finished with one operation"
+"d 1"
 POP a [digit] a0
 POP a carry a0
-GOTO "finished with decrement"
-"decrement 2"
+GOTO "finished with one operation"
+"d 2"
 POP a [digit] a1
 POP a carry a0
-GOTO "finished with decrement"
-"decrement 3"
+GOTO "finished with one operation"
+"d 3"
 POP a [digit] a2
 POP a carry a0
-GOTO "finished with decrement"
-"decrement 4"
+GOTO "finished with one operation"
+"d 4"
 POP a [digit] a3
 POP a carry a0
-GOTO "finished with decrement"
-"decrement 5"
+GOTO "finished with one operation"
+"d 5"
 POP a [digit] a4
 POP a carry a0
-GOTO "finished with decrement"
-"decrement 6"
+GOTO "finished with one operation"
+"d 6"
 POP a [digit] a5
 POP a carry a0
-GOTO "finished with decrement"
-"decrement 7"
+GOTO "finished with one operation"
+"d 7"
 POP a [digit] a6
 POP a carry a0
-GOTO "finished with decrement"
-"decrement 8"
+GOTO "finished with one operation"
+"d 8"
 POP a [digit] a7
 POP a carry a0
-GOTO "finished with decrement"
-"decrement 9"
+GOTO "finished with one operation"
+"d 9"
 POP a [digit] a8
 POP a carry a0
-GOTO "finished with decrement"
-"increment 0"
+GOTO "finished with one operation"
+"i 0"
 POP a [digit] a1
 POP a carry a0
-GOTO "finished with increment"
-"increment 1"
+GOTO "finished with one operation"
+"i 1"
 POP a [digit] a2
 POP a carry a0
-GOTO "finished with increment"
-"increment 2"
+GOTO "finished with one operation"
+"i 2"
 POP a [digit] a3
 POP a carry a0
-GOTO "finished with increment"
-"increment 3"
+GOTO "finished with one operation"
+"i 3"
 POP a [digit] a4
 POP a carry a0
-GOTO "finished with increment"
-"increment 4"
+GOTO "finished with one operation"
+"i 4"
 POP a [digit] a5
 POP a carry a0
-GOTO "finished with increment"
-"increment 5"
+GOTO "finished with one operation"
+"i 5"
 POP a [digit] a6
 POP a carry a0
-GOTO "finished with increment"
-"increment 6"
+GOTO "finished with one operation"
+"i 6"
 POP a [digit] a7
 POP a carry a0
-GOTO "finished with increment"
-"increment 7"
+GOTO "finished with one operation"
+"i 7"
 POP a [digit] a8
 POP a carry a0
-GOTO "finished with increment"
-"increment 8"
+GOTO "finished with one operation"
+"i 8"
 POP a [digit] a9
 POP a carry a0
-GOTO "finished with increment"
-"increment 9"
+GOTO "finished with one operation"
+"i 9"
 POP a [digit] a0
 POP a carry a1
-GOTO "finished with increment"
+GOTO "finished with one operation"
 "square 00"
-POP a numbers a000
+POP a number a000
 GOTO "analyse commands"
 "square 01"
-POP a numbers a001
+POP a number a001
 GOTO "analyse commands"
 "square 02"
-POP a numbers a004
+POP a number a004
 GOTO "analyse commands"
 "square 03"
-POP a numbers a009
+POP a number a009
 GOTO "analyse commands"
 "square 04"
-POP a numbers a016
+POP a number a016
 GOTO "analyse commands"
 "square 05"
-POP a numbers a025
+POP a number a025
 GOTO "analyse commands"
 "square 06"
-POP a numbers a036
+POP a number a036
 GOTO "analyse commands"
 "square 07"
-POP a numbers a049
+POP a number a049
 GOTO "analyse commands"
 "square 08"
-POP a numbers a064
+POP a number a064
 GOTO "analyse commands"
 "square 09"
-POP a numbers a081
+POP a number a081
 GOTO "analyse commands"
 "square 10"
-POP a numbers a100
+POP a number a100
 GOTO "analyse commands"
 "square 11"
-POP a numbers a121
+POP a number a121
 GOTO "analyse commands"
 "square 12"
-POP a numbers a144
+POP a number a144
 GOTO "analyse commands"
 "square 13"
-POP a numbers a169
+POP a number a169
 GOTO "analyse commands"
 "square 14"
-POP a numbers a196
+POP a number a196
 GOTO "analyse commands"
 "square 15"
-POP a numbers a225
+POP a number a225
 GOTO "analyse commands"
+"square 16"
+GOTO "to 000"
 "square 17"
-POP a numbers a289
+POP a number a289
 GOTO "analyse commands"
 "square 18"
-POP a numbers a324
+POP a number a324
 GOTO "analyse commands"
 "square 19"
-POP a numbers a361
+POP a number a361
 GOTO "analyse commands"
 "square 20"
-POP a numbers a400
+POP a number a400
 GOTO "analyse commands"
 "square 21"
-POP a numbers a441
+POP a number a441
 GOTO "analyse commands"
 "square 22"
-POP a numbers a484
+POP a number a484
 GOTO "analyse commands"
 "square 23"
-POP a numbers a529
+POP a number a529
 GOTO "analyse commands"
 "square 24"
-POP a numbers a576
+POP a number a576
 GOTO "analyse commands"
 "square 25"
-POP a numbers a625
+POP a number a625
 GOTO "analyse commands"
 "square 26"
-POP a numbers a676
+POP a number a676
 GOTO "analyse commands"
 "square 27"
-POP a numbers a729
+POP a number a729
 GOTO "analyse commands"
 "square 28"
-POP a numbers a784
+POP a number a784
 GOTO "analyse commands"
 "square 29"
-POP a numbers a841
+POP a number a841
 GOTO "analyse commands"
 "square 30"
-POP a numbers a900
+POP a number a900
 GOTO "analyse commands"
 "square 31"
-POP a numbers a961
+POP a number a961
 GOTO "analyse commands"
 end
