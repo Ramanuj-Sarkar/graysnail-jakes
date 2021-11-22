@@ -31,7 +31,6 @@ POP a "all input" a"[all input][number]"
 GOTO "analyse commands"
 
 "+- command"
-POP a "all input" a"[all input][instruction][newline]>>"
 POP a digit aones
 "#This will go to + 1, - 1, + 2, - 2, etc. depending on what instruction and ones are."
 GOTO "[instruction] [ones]"
