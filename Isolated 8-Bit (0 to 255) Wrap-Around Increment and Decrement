@@ -31,6 +31,7 @@ POP ones temp [temp]
 GOTO "+- command" [instruction] +
 GOTO "+- command" [instruction] -
 GOTO ". command" [instruction] .
+GOTO ", command" [instruction] ,
 GOTO "analyse commands"
 
 "+- command"
@@ -66,6 +67,13 @@ GOTO "number is changed"
 "to 255"
 POP a number a255
 GOTO "number is changed"
+
+". command"
+GOTO "analyse commands" [hundreds][tens] 00
+GOTO "analyse commands" [hundreds][tens] 01
+GOTO "analyse commands" [hundreds][tens] 02
+GOTO ". [number]"
+GOTO "analyse commands"
 
 "#From here on out, the code consists of single commands which do one or two operations."
 
@@ -152,13 +160,6 @@ GOTO "finished with one operation"
 POP a [digit] a0
 POP a carry a1
 GOTO "finished with one operation"
-
-". command"
-GOTO "analyse commands" [hundreds][tens] 00
-GOTO "analyse commands" [hundreds][tens] 01
-GOTO "analyse commands" [hundreds][tens] 02
-GOTO ". [number]"
-GOTO "analyse commands"
 
 ". 030"
 GOTO "analyse commands"
