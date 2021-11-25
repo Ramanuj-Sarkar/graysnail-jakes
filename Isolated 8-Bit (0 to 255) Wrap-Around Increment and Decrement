@@ -1,7 +1,5 @@
 "This is the number entered."
 POP a number a000
-"#This shows the number during output and is updated when the command is o."
-POP a "show number" a
 "#I use carry to indicate repetition for incrementing (9 to 0) and decrementing (0 to 9)."
 POP a carry a0
 "#This is the only thing that is output. All input goes in here."
