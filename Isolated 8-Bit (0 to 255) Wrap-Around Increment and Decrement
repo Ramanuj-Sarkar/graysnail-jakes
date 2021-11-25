@@ -6,6 +6,12 @@ POP a "show number" a
 POP a carry a0
 "#This is the only thing that is output. All input goes in here."
 POP a "all input" a""
+"#This is what is to the left of the current number."
+POP a "left numbers" a
+"#This is what is to the right of the current number."
+POP a "right numbers" a
+"#This is where the commands which were already read or skipped go."
+POP a "left commands" a
 
 "#input left bracket and right bracket"
 OUTPUT "Input left bracket."
@@ -32,6 +38,7 @@ GOTO "+- command" [instruction] +
 GOTO "+- command" [instruction] -
 GOTO ". command" [instruction] .
 GOTO ", command" [instruction] ,
+GOTO "> command" [instruction] >
 GOTO "analyse commands"
 
 "+- command"
@@ -80,6 +87,30 @@ INPUT char
 GOTO ", lb" [char] [lb]
 GOTO ", rb" [char] [rb]
 GOTO ", [char]"
+
+"> command"
+POP a "left numbers" a"[ones][tens][hundreds][left numbers]"
+GOTO "empty right" "[right numbers]" ""
+POP a hundreds "[right numbers]"
+POP a tens "[right numbers]"
+POP a ones "[right numbers]"
+POP a number a"[hundreds][tens][ones]"
+GOTO "analyse commands"
+"empty right"
+POP a number a000
+GOTO "analyse commands"
+
+"> command"
+POP a "right numbers" a"[hundreds][tens][ones][right numbers]"
+GOTO "empty left" "[left numbers]" ""
+POP a ones "[left numbers]"
+POP a tens "[left numbers]"
+POP a hundreds "[left numbers]"
+POP a number a"[hundreds][tens][ones]"
+GOTO "analyse commands"
+"empty left"
+POP a number a000
+GOTO "analyse commands"
 
 "#From here on out, the code consists of single commands which do one or two operations."
 
