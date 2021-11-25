@@ -39,6 +39,7 @@ GOTO "+- command" [instruction] -
 GOTO ". command" [instruction] .
 GOTO ", command" [instruction] ,
 GOTO "> command" [instruction] >
+GOTO "< command" [instruction] <
 GOTO "analyse commands"
 
 "+- command"
@@ -100,7 +101,7 @@ GOTO "analyse commands"
 POP a number a000
 GOTO "analyse commands"
 
-"> command"
+"< command"
 POP a "right numbers" a"[hundreds][tens][ones][right numbers]"
 GOTO "empty left" "[left numbers]" ""
 POP a ones "[left numbers]"
