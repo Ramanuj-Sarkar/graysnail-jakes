@@ -75,6 +75,12 @@ GOTO "analyse commands" [hundreds][tens] 02
 GOTO ". [number]"
 GOTO "analyse commands"
 
+", command"
+INPUT char
+GOTO ", lb" [char] [lb]
+GOTO ", rb" [char] [rb]
+GOTO ", [char]"
+
 "#From here on out, the code consists of single commands which do one or two operations."
 
 "#The variable carry becomes 1 here."
@@ -161,900 +167,1329 @@ POP a [digit] a0
 POP a carry a1
 GOTO "finished with one operation"
 
+"#These are the output commands."
 ". 030"
 GOTO "analyse commands"
-
 ". 031"
 GOTO "analyse commands"
-
 ". 032"
 POP a "all input" a"[all input] "
 GOTO "analyse commands"
-
 ". 033"
 POP a "all input" a"[all input]!"
 GOTO "analyse commands"
-
 ". 034"
 POP a "all input" a"[all input]''"
 GOTO "analyse commands"
-
 ". 035"
 POP a "all input" a"[all input]#"
 GOTO "analyse commands"
-
 ". 036"
 POP a "all input" a"[all input]$"
 GOTO "analyse commands"
-
 ". 037"
 POP a "all input" a"[all input]%"
 GOTO "analyse commands"
-
 ". 038"
 POP a "all input" a"[all input]&"
 GOTO "analyse commands"
-
 ". 039"
 POP a "all input" a"[all input]'"
 GOTO "analyse commands"
-
 ". 040"
 POP a "all input" a"[all input]("
 GOTO "analyse commands"
-
 ". 041"
 POP a "all input" a"[all input])"
 GOTO "analyse commands"
-
 ". 042"
 POP a "all input" a"[all input]*"
 GOTO "analyse commands"
-
 ". 043"
 POP a "all input" a"[all input]+"
 GOTO "analyse commands"
-
 ". 044"
 POP a "all input" a"[all input],"
 GOTO "analyse commands"
-
 ". 045"
 POP a "all input" a"[all input]-"
 GOTO "analyse commands"
-
 ". 046"
 POP a "all input" a"[all input]."
 GOTO "analyse commands"
-
 ". 047"
 POP a "all input" a"[all input]/"
 GOTO "analyse commands"
-
 ". 048"
 POP a "all input" a"[all input]0"
 GOTO "analyse commands"
-
 ". 049"
 POP a "all input" a"[all input]1"
 GOTO "analyse commands"
-
 ". 050"
 POP a "all input" a"[all input]2"
 GOTO "analyse commands"
-
 ". 051"
 POP a "all input" a"[all input]3"
 GOTO "analyse commands"
-
 ". 052"
 POP a "all input" a"[all input]4"
 GOTO "analyse commands"
-
 ". 053"
 POP a "all input" a"[all input]5"
 GOTO "analyse commands"
-
 ". 054"
 POP a "all input" a"[all input]6"
 GOTO "analyse commands"
-
 ". 055"
 POP a "all input" a"[all input]7"
 GOTO "analyse commands"
-
 ". 056"
 POP a "all input" a"[all input]8"
 GOTO "analyse commands"
-
 ". 057"
 POP a "all input" a"[all input]9"
 GOTO "analyse commands"
-
 ". 058"
 POP a "all input" a"[all input]:"
 GOTO "analyse commands"
-
 ". 059"
 POP a "all input" a"[all input];"
 GOTO "analyse commands"
-
 ". 060"
 POP a "all input" a"[all input]<"
 GOTO "analyse commands"
-
 ". 061"
 POP a "all input" a"[all input]="
 GOTO "analyse commands"
-
 ". 062"
 POP a "all input" a"[all input]>"
 GOTO "analyse commands"
-
 ". 063"
 POP a "all input" a"[all input]?"
 GOTO "analyse commands"
-
 ". 064"
 POP a "all input" a"[all input]@"
 GOTO "analyse commands"
-
 ". 065"
 POP a "all input" a"[all input]A"
 GOTO "analyse commands"
-
 ". 066"
 POP a "all input" a"[all input]B"
 GOTO "analyse commands"
-
 ". 067"
 POP a "all input" a"[all input]C"
 GOTO "analyse commands"
-
 ". 068"
 POP a "all input" a"[all input]D"
 GOTO "analyse commands"
-
 ". 069"
 POP a "all input" a"[all input]E"
 GOTO "analyse commands"
-
 ". 070"
 POP a "all input" a"[all input]F"
 GOTO "analyse commands"
-
 ". 071"
 POP a "all input" a"[all input]G"
 GOTO "analyse commands"
-
 ". 072"
 POP a "all input" a"[all input]H"
 GOTO "analyse commands"
-
 ". 073"
 POP a "all input" a"[all input]I"
 GOTO "analyse commands"
-
 ". 074"
 POP a "all input" a"[all input]J"
 GOTO "analyse commands"
-
 ". 075"
 POP a "all input" a"[all input]K"
 GOTO "analyse commands"
-
 ". 076"
 POP a "all input" a"[all input]L"
 GOTO "analyse commands"
-
 ". 077"
 POP a "all input" a"[all input]M"
 GOTO "analyse commands"
-
 ". 078"
 POP a "all input" a"[all input]N"
 GOTO "analyse commands"
-
 ". 079"
 POP a "all input" a"[all input]O"
 GOTO "analyse commands"
-
 ". 080"
 POP a "all input" a"[all input]P"
 GOTO "analyse commands"
-
 ". 081"
 POP a "all input" a"[all input]Q"
 GOTO "analyse commands"
-
 ". 082"
 POP a "all input" a"[all input]R"
 GOTO "analyse commands"
-
 ". 083"
 POP a "all input" a"[all input]S"
 GOTO "analyse commands"
-
 ". 084"
 POP a "all input" a"[all input]T"
 GOTO "analyse commands"
-
 ". 085"
 POP a "all input" a"[all input]U"
 GOTO "analyse commands"
-
 ". 086"
 POP a "all input" a"[all input]V"
 GOTO "analyse commands"
-
 ". 087"
 POP a "all input" a"[all input]W"
 GOTO "analyse commands"
-
 ". 088"
 POP a "all input" a"[all input]X"
 GOTO "analyse commands"
-
 ". 089"
 POP a "all input" a"[all input]Y"
 GOTO "analyse commands"
-
 ". 090"
 POP a "all input" a"[all input]Z"
 GOTO "analyse commands"
-
 ". 091"
 POP a "all input" a"[all input][lb]"
 GOTO "analyse commands"
-
 ". 092"
 POP a "all input" a"[all input]\"
 GOTO "analyse commands"
-
 ". 093"
 POP a "all input" a"[all input][rb]"
 GOTO "analyse commands"
-
 ". 094"
 POP a "all input" a"[all input]^"
 GOTO "analyse commands"
-
 ". 095"
 POP a "all input" a"[all input]_"
 GOTO "analyse commands"
-
 ". 096"
 POP a "all input" a"[all input]`"
 GOTO "analyse commands"
-
 ". 097"
 POP a "all input" a"[all input]a"
 GOTO "analyse commands"
-
 ". 098"
 POP a "all input" a"[all input]b"
 GOTO "analyse commands"
-
 ". 099"
 POP a "all input" a"[all input]c"
 GOTO "analyse commands"
-
 ". 100"
 POP a "all input" a"[all input]d"
 GOTO "analyse commands"
-
 ". 101"
 POP a "all input" a"[all input]e"
 GOTO "analyse commands"
-
 ". 102"
 POP a "all input" a"[all input]f"
 GOTO "analyse commands"
-
 ". 103"
 POP a "all input" a"[all input]g"
 GOTO "analyse commands"
-
 ". 104"
 POP a "all input" a"[all input]h"
 GOTO "analyse commands"
-
 ". 105"
 POP a "all input" a"[all input]i"
 GOTO "analyse commands"
-
 ". 106"
 POP a "all input" a"[all input]j"
 GOTO "analyse commands"
-
 ". 107"
 POP a "all input" a"[all input]k"
 GOTO "analyse commands"
-
 ". 108"
 POP a "all input" a"[all input]l"
 GOTO "analyse commands"
-
 ". 109"
 POP a "all input" a"[all input]m"
 GOTO "analyse commands"
-
 ". 110"
 POP a "all input" a"[all input]n"
 GOTO "analyse commands"
-
 ". 111"
 POP a "all input" a"[all input]o"
 GOTO "analyse commands"
-
 ". 112"
 POP a "all input" a"[all input]p"
 GOTO "analyse commands"
-
 ". 113"
 POP a "all input" a"[all input]q"
 GOTO "analyse commands"
-
 ". 114"
 POP a "all input" a"[all input]r"
 GOTO "analyse commands"
-
 ". 115"
 POP a "all input" a"[all input]s"
 GOTO "analyse commands"
-
 ". 116"
 POP a "all input" a"[all input]t"
 GOTO "analyse commands"
-
 ". 117"
 POP a "all input" a"[all input]u"
 GOTO "analyse commands"
-
 ". 118"
 POP a "all input" a"[all input]v"
 GOTO "analyse commands"
-
 ". 119"
 POP a "all input" a"[all input]w"
 GOTO "analyse commands"
-
 ". 120"
 POP a "all input" a"[all input]x"
 GOTO "analyse commands"
-
 ". 121"
 POP a "all input" a"[all input]y"
 GOTO "analyse commands"
-
 ". 122"
 POP a "all input" a"[all input]z"
 GOTO "analyse commands"
-
 ". 123"
 POP a "all input" a"[all input]{"
 GOTO "analyse commands"
-
 ". 124"
 POP a "all input" a"[all input]|"
 GOTO "analyse commands"
-
 ". 125"
 POP a "all input" a"[all input]}"
 GOTO "analyse commands"
-
 ". 126"
 POP a "all input" a"[all input]~"
 GOTO "analyse commands"
-
 ". 127"
 GOTO "analyse commands"
-
 ". 128"
 POP a "all input" a"[all input]€"
 GOTO "analyse commands"
-
 ". 129"
 GOTO "analyse commands"
-
 ". 130"
 POP a "all input" a"[all input]‚"
 GOTO "analyse commands"
-
 ". 131"
 POP a "all input" a"[all input]ƒ"
 GOTO "analyse commands"
-
 ". 132"
 POP a "all input" a"[all input]„"
 GOTO "analyse commands"
-
 ". 133"
 POP a "all input" a"[all input]…"
 GOTO "analyse commands"
-
 ". 134"
 POP a "all input" a"[all input]†"
 GOTO "analyse commands"
-
 ". 135"
 POP a "all input" a"[all input]‡"
 GOTO "analyse commands"
-
 ". 136"
 POP a "all input" a"[all input]ˆ"
 GOTO "analyse commands"
-
 ". 137"
 POP a "all input" a"[all input]‰"
 GOTO "analyse commands"
-
 ". 138"
 POP a "all input" a"[all input]Š"
 GOTO "analyse commands"
-
 ". 139"
 POP a "all input" a"[all input]‹"
 GOTO "analyse commands"
-
 ". 140"
 POP a "all input" a"[all input]Œ"
 GOTO "analyse commands"
-
 ". 141"
 GOTO "analyse commands"
-
 ". 142"
 POP a "all input" a"[all input]Ž"
 GOTO "analyse commands"
-
 ". 143"
 GOTO "analyse commands"
-
 ". 144"
 GOTO "analyse commands"
-
 ". 145"
 POP a "all input" a"[all input]‘"
 GOTO "analyse commands"
-
 ". 146"
 POP a "all input" a"[all input]’"
 GOTO "analyse commands"
-
 ". 147"
 POP a "all input" a"[all input]“"
 GOTO "analyse commands"
-
 ". 148"
 POP a "all input" a"[all input]”"
 GOTO "analyse commands"
-
 ". 149"
 POP a "all input" a"[all input]•"
 GOTO "analyse commands"
-
 ". 150"
 POP a "all input" a"[all input]–"
 GOTO "analyse commands"
-
 ". 151"
 POP a "all input" a"[all input]—"
 GOTO "analyse commands"
-
 ". 152"
 POP a "all input" a"[all input]˜"
 GOTO "analyse commands"
-
 ". 153"
 POP a "all input" a"[all input]™"
 GOTO "analyse commands"
-
 ". 154"
 POP a "all input" a"[all input]š"
 GOTO "analyse commands"
-
 ". 155"
 POP a "all input" a"[all input]›"
 GOTO "analyse commands"
-
 ". 156"
 POP a "all input" a"[all input]œ"
 GOTO "analyse commands"
-
 ". 157"
 GOTO "analyse commands"
-
 ". 158"
 POP a "all input" a"[all input]ž"
 GOTO "analyse commands"
-
 ". 159"
 POP a "all input" a"[all input]Ÿ"
 GOTO "analyse commands"
-
 ". 160"
 POP a "all input" a"[all input] "
 GOTO "analyse commands"
-
 ". 161"
 POP a "all input" a"[all input]¡"
 GOTO "analyse commands"
-
 ". 162"
 POP a "all input" a"[all input]¢"
 GOTO "analyse commands"
-
 ". 163"
 POP a "all input" a"[all input]£"
 GOTO "analyse commands"
-
 ". 164"
 POP a "all input" a"[all input]¤"
 GOTO "analyse commands"
-
 ". 165"
 POP a "all input" a"[all input]¥"
 GOTO "analyse commands"
-
 ". 166"
 POP a "all input" a"[all input]¦"
 GOTO "analyse commands"
-
 ". 167"
 POP a "all input" a"[all input]§"
 GOTO "analyse commands"
-
 ". 168"
 POP a "all input" a"[all input]¨"
 GOTO "analyse commands"
-
 ". 169"
 POP a "all input" a"[all input]©"
 GOTO "analyse commands"
-
 ". 170"
 POP a "all input" a"[all input]ª"
 GOTO "analyse commands"
-
 ". 171"
 POP a "all input" a"[all input]«"
 GOTO "analyse commands"
-
 ". 172"
 POP a "all input" a"[all input]¬"
 GOTO "analyse commands"
-
 ". 173"
 POP a "all input" a"[all input]­"
 GOTO "analyse commands"
-
 ". 174"
 POP a "all input" a"[all input]®"
 GOTO "analyse commands"
-
 ". 175"
 POP a "all input" a"[all input]¯"
 GOTO "analyse commands"
-
 ". 176"
 POP a "all input" a"[all input]°"
 GOTO "analyse commands"
-
 ". 177"
 POP a "all input" a"[all input]±"
 GOTO "analyse commands"
-
 ". 178"
 POP a "all input" a"[all input]²"
 GOTO "analyse commands"
-
 ". 179"
 POP a "all input" a"[all input]³"
 GOTO "analyse commands"
-
 ". 180"
 POP a "all input" a"[all input]´"
 GOTO "analyse commands"
-
 ". 181"
 POP a "all input" a"[all input]µ"
 GOTO "analyse commands"
-
 ". 182"
 POP a "all input" a"[all input]¶"
 GOTO "analyse commands"
-
 ". 183"
 POP a "all input" a"[all input]·"
 GOTO "analyse commands"
-
 ". 184"
 POP a "all input" a"[all input]¸"
 GOTO "analyse commands"
-
 ". 185"
 POP a "all input" a"[all input]¹"
 GOTO "analyse commands"
-
 ". 186"
 POP a "all input" a"[all input]º"
 GOTO "analyse commands"
-
 ". 187"
 POP a "all input" a"[all input]»"
 GOTO "analyse commands"
-
 ". 188"
 POP a "all input" a"[all input]¼"
 GOTO "analyse commands"
-
 ". 189"
 POP a "all input" a"[all input]½"
 GOTO "analyse commands"
-
 ". 190"
 POP a "all input" a"[all input]¾"
 GOTO "analyse commands"
-
 ". 191"
 POP a "all input" a"[all input]¿"
 GOTO "analyse commands"
-
 ". 192"
 POP a "all input" a"[all input]À"
 GOTO "analyse commands"
-
 ". 193"
 POP a "all input" a"[all input]Á"
 GOTO "analyse commands"
-
 ". 194"
 POP a "all input" a"[all input]Â"
 GOTO "analyse commands"
-
 ". 195"
 POP a "all input" a"[all input]Ã"
 GOTO "analyse commands"
-
 ". 196"
 POP a "all input" a"[all input]Ä"
 GOTO "analyse commands"
-
 ". 197"
 POP a "all input" a"[all input]Å"
 GOTO "analyse commands"
-
 ". 198"
 POP a "all input" a"[all input]Æ"
 GOTO "analyse commands"
-
 ". 199"
 POP a "all input" a"[all input]Ç"
 GOTO "analyse commands"
-
 ". 200"
 POP a "all input" a"[all input]È"
 GOTO "analyse commands"
-
 ". 201"
 POP a "all input" a"[all input]É"
 GOTO "analyse commands"
-
 ". 202"
 POP a "all input" a"[all input]Ê"
 GOTO "analyse commands"
-
 ". 203"
 POP a "all input" a"[all input]Ë"
 GOTO "analyse commands"
-
 ". 204"
 POP a "all input" a"[all input]Ì"
 GOTO "analyse commands"
-
 ". 205"
 POP a "all input" a"[all input]Í"
 GOTO "analyse commands"
-
 ". 206"
 POP a "all input" a"[all input]Î"
 GOTO "analyse commands"
-
 ". 207"
 POP a "all input" a"[all input]Ï"
 GOTO "analyse commands"
-
 ". 208"
 POP a "all input" a"[all input]Ð"
 GOTO "analyse commands"
-
 ". 209"
 POP a "all input" a"[all input]Ñ"
 GOTO "analyse commands"
-
 ". 210"
 POP a "all input" a"[all input]Ò"
 GOTO "analyse commands"
-
 ". 211"
 POP a "all input" a"[all input]Ó"
 GOTO "analyse commands"
-
 ". 212"
 POP a "all input" a"[all input]Ô"
 GOTO "analyse commands"
-
 ". 213"
 POP a "all input" a"[all input]Õ"
 GOTO "analyse commands"
-
 ". 214"
 POP a "all input" a"[all input]Ö"
 GOTO "analyse commands"
-
 ". 215"
 POP a "all input" a"[all input]×"
 GOTO "analyse commands"
-
 ". 216"
 POP a "all input" a"[all input]Ø"
 GOTO "analyse commands"
-
 ". 217"
 POP a "all input" a"[all input]Ù"
 GOTO "analyse commands"
-
 ". 218"
 POP a "all input" a"[all input]Ú"
 GOTO "analyse commands"
-
 ". 219"
 POP a "all input" a"[all input]Û"
 GOTO "analyse commands"
-
 ". 220"
 POP a "all input" a"[all input]Ü"
 GOTO "analyse commands"
-
 ". 221"
 POP a "all input" a"[all input]Ý"
 GOTO "analyse commands"
-
 ". 222"
 POP a "all input" a"[all input]Þ"
 GOTO "analyse commands"
-
 ". 223"
 POP a "all input" a"[all input]ß"
 GOTO "analyse commands"
-
 ". 224"
 POP a "all input" a"[all input]à"
 GOTO "analyse commands"
-
 ". 225"
 POP a "all input" a"[all input]á"
 GOTO "analyse commands"
-
 ". 226"
 POP a "all input" a"[all input]â"
 GOTO "analyse commands"
-
 ". 227"
 POP a "all input" a"[all input]ã"
 GOTO "analyse commands"
-
 ". 228"
 POP a "all input" a"[all input]ä"
 GOTO "analyse commands"
-
 ". 229"
 POP a "all input" a"[all input]å"
 GOTO "analyse commands"
-
 ". 230"
 POP a "all input" a"[all input]æ"
 GOTO "analyse commands"
-
 ". 231"
 POP a "all input" a"[all input]ç"
 GOTO "analyse commands"
-
 ". 232"
 POP a "all input" a"[all input]è"
 GOTO "analyse commands"
-
 ". 233"
 POP a "all input" a"[all input]é"
 GOTO "analyse commands"
-
 ". 234"
 POP a "all input" a"[all input]ê"
 GOTO "analyse commands"
-
 ". 235"
 POP a "all input" a"[all input]ë"
 GOTO "analyse commands"
-
 ". 236"
 POP a "all input" a"[all input]ì"
 GOTO "analyse commands"
-
 ". 237"
 POP a "all input" a"[all input]í"
 GOTO "analyse commands"
-
 ". 238"
 POP a "all input" a"[all input]î"
 GOTO "analyse commands"
-
 ". 239"
 POP a "all input" a"[all input]ï"
 GOTO "analyse commands"
-
 ". 240"
 POP a "all input" a"[all input]ð"
 GOTO "analyse commands"
-
 ". 241"
 POP a "all input" a"[all input]ñ"
 GOTO "analyse commands"
-
 ". 242"
 POP a "all input" a"[all input]ò"
 GOTO "analyse commands"
-
 ". 243"
 POP a "all input" a"[all input]ó"
 GOTO "analyse commands"
-
 ". 244"
 POP a "all input" a"[all input]ô"
 GOTO "analyse commands"
-
 ". 245"
 POP a "all input" a"[all input]õ"
 GOTO "analyse commands"
-
 ". 246"
 POP a "all input" a"[all input]ö"
 GOTO "analyse commands"
-
 ". 247"
 POP a "all input" a"[all input]÷"
 GOTO "analyse commands"
-
 ". 248"
 POP a "all input" a"[all input]ø"
 GOTO "analyse commands"
-
 ". 249"
 POP a "all input" a"[all input]ù"
 GOTO "analyse commands"
-
 ". 250"
 POP a "all input" a"[all input]ú"
 GOTO "analyse commands"
-
 ". 251"
 POP a "all input" a"[all input]û"
 GOTO "analyse commands"
-
 ". 252"
 POP a "all input" a"[all input]ü"
 GOTO "analyse commands"
-
 ". 253"
 POP a "all input" a"[all input]ý"
 GOTO "analyse commands"
-
 ". 254"
 POP a "all input" a"[all input]þ"
 GOTO "analyse commands"
-
 ". 255"
 POP a "all input" a"[all input]ÿ"
+GOTO "analyse commands"
+
+"#These are the input commands."
+",  "
+POP a number a032
+GOTO "analyse commands"
+", !"
+POP a number a033
+GOTO "analyse commands"
+", ''"
+POP a number a034
+GOTO "analyse commands"
+", #"
+POP a number a035
+GOTO "analyse commands"
+", $"
+POP a number a036
+GOTO "analyse commands"
+", %"
+POP a number a037
+GOTO "analyse commands"
+", &"
+POP a number a038
+GOTO "analyse commands"
+", '"
+POP a number a039
+GOTO "analyse commands"
+", ("
+POP a number a040
+GOTO "analyse commands"
+", )"
+POP a number a041
+GOTO "analyse commands"
+", *"
+POP a number a042
+GOTO "analyse commands"
+", +"
+POP a number a043
+GOTO "analyse commands"
+", ,"
+POP a number a044
+GOTO "analyse commands"
+", -"
+POP a number a045
+GOTO "analyse commands"
+", ."
+POP a number a046
+GOTO "analyse commands"
+", /"
+POP a number a047
+GOTO "analyse commands"
+", 0"
+POP a number a048
+GOTO "analyse commands"
+", 1"
+POP a number a049
+GOTO "analyse commands"
+", 2"
+POP a number a050
+GOTO "analyse commands"
+", 3"
+POP a number a051
+GOTO "analyse commands"
+", 4"
+POP a number a052
+GOTO "analyse commands"
+", 5"
+POP a number a053
+GOTO "analyse commands"
+", 6"
+POP a number a054
+GOTO "analyse commands"
+", 7"
+POP a number a055
+GOTO "analyse commands"
+", 8"
+POP a number a056
+GOTO "analyse commands"
+", 9"
+POP a number a057
+GOTO "analyse commands"
+", :"
+POP a number a058
+GOTO "analyse commands"
+", ;"
+POP a number a059
+GOTO "analyse commands"
+", <"
+POP a number a060
+GOTO "analyse commands"
+", ="
+POP a number a061
+GOTO "analyse commands"
+", >"
+POP a number a062
+GOTO "analyse commands"
+", ?"
+POP a number a063
+GOTO "analyse commands"
+", @"
+POP a number a064
+GOTO "analyse commands"
+", A"
+POP a number a065
+GOTO "analyse commands"
+", B"
+POP a number a066
+GOTO "analyse commands"
+", C"
+POP a number a067
+GOTO "analyse commands"
+", D"
+POP a number a068
+GOTO "analyse commands"
+", E"
+POP a number a069
+GOTO "analyse commands"
+", F"
+POP a number a070
+GOTO "analyse commands"
+", G"
+POP a number a071
+GOTO "analyse commands"
+", H"
+POP a number a072
+GOTO "analyse commands"
+", I"
+POP a number a073
+GOTO "analyse commands"
+", J"
+POP a number a074
+GOTO "analyse commands"
+", K"
+POP a number a075
+GOTO "analyse commands"
+", L"
+POP a number a076
+GOTO "analyse commands"
+", M"
+POP a number a077
+GOTO "analyse commands"
+", N"
+POP a number a078
+GOTO "analyse commands"
+", O"
+POP a number a079
+GOTO "analyse commands"
+", P"
+POP a number a080
+GOTO "analyse commands"
+", Q"
+POP a number a081
+GOTO "analyse commands"
+", R"
+POP a number a082
+GOTO "analyse commands"
+", S"
+POP a number a083
+GOTO "analyse commands"
+", T"
+POP a number a084
+GOTO "analyse commands"
+", U"
+POP a number a085
+GOTO "analyse commands"
+", V"
+POP a number a086
+GOTO "analyse commands"
+", W"
+POP a number a087
+GOTO "analyse commands"
+", X"
+POP a number a088
+GOTO "analyse commands"
+", Y"
+POP a number a089
+GOTO "analyse commands"
+", Z"
+POP a number a090
+GOTO "analyse commands"
+", lb"
+POP a number a091
+GOTO "analyse commands"
+", \"
+POP a number a092
+GOTO "analyse commands"
+", rb"
+POP a number a093
+GOTO "analyse commands"
+", ^"
+POP a number a094
+GOTO "analyse commands"
+", _"
+POP a number a095
+GOTO "analyse commands"
+", `"
+POP a number a096
+GOTO "analyse commands"
+", a"
+POP a number a097
+GOTO "analyse commands"
+", b"
+POP a number a098
+GOTO "analyse commands"
+", c"
+POP a number a099
+GOTO "analyse commands"
+", d"
+POP a number a100
+GOTO "analyse commands"
+", e"
+POP a number a101
+GOTO "analyse commands"
+", f"
+POP a number a102
+GOTO "analyse commands"
+", g"
+POP a number a103
+GOTO "analyse commands"
+", h"
+POP a number a104
+GOTO "analyse commands"
+", i"
+POP a number a105
+GOTO "analyse commands"
+", j"
+POP a number a106
+GOTO "analyse commands"
+", k"
+POP a number a107
+GOTO "analyse commands"
+", l"
+POP a number a108
+GOTO "analyse commands"
+", m"
+POP a number a109
+GOTO "analyse commands"
+", n"
+POP a number a110
+GOTO "analyse commands"
+", o"
+POP a number a111
+GOTO "analyse commands"
+", p"
+POP a number a112
+GOTO "analyse commands"
+", q"
+POP a number a113
+GOTO "analyse commands"
+", r"
+POP a number a114
+GOTO "analyse commands"
+", s"
+POP a number a115
+GOTO "analyse commands"
+", t"
+POP a number a116
+GOTO "analyse commands"
+", u"
+POP a number a117
+GOTO "analyse commands"
+", v"
+POP a number a118
+GOTO "analyse commands"
+", w"
+POP a number a119
+GOTO "analyse commands"
+", x"
+POP a number a120
+GOTO "analyse commands"
+", y"
+POP a number a121
+GOTO "analyse commands"
+", z"
+POP a number a122
+GOTO "analyse commands"
+", {"
+POP a number a123
+GOTO "analyse commands"
+", |"
+POP a number a124
+GOTO "analyse commands"
+", }"
+POP a number a125
+GOTO "analyse commands"
+", ~"
+POP a number a126
+GOTO "analyse commands"
+", €"
+POP a number a128
+GOTO "analyse commands"
+", ‚"
+POP a number a130
+GOTO "analyse commands"
+", ƒ"
+POP a number a131
+GOTO "analyse commands"
+", „"
+POP a number a132
+GOTO "analyse commands"
+", …"
+POP a number a133
+GOTO "analyse commands"
+", †"
+POP a number a134
+GOTO "analyse commands"
+", ‡"
+POP a number a135
+GOTO "analyse commands"
+", ˆ"
+POP a number a136
+GOTO "analyse commands"
+", ‰"
+POP a number a137
+GOTO "analyse commands"
+", Š"
+POP a number a138
+GOTO "analyse commands"
+", ‹"
+POP a number a139
+GOTO "analyse commands"
+", Œ"
+POP a number a140
+GOTO "analyse commands"
+", Ž"
+POP a number a142
+GOTO "analyse commands"
+", ‘"
+POP a number a145
+GOTO "analyse commands"
+", ’"
+POP a number a146
+GOTO "analyse commands"
+", “"
+POP a number a147
+GOTO "analyse commands"
+", ”"
+POP a number a148
+GOTO "analyse commands"
+", •"
+POP a number a149
+GOTO "analyse commands"
+", –"
+POP a number a150
+GOTO "analyse commands"
+", —"
+POP a number a151
+GOTO "analyse commands"
+", ˜"
+POP a number a152
+GOTO "analyse commands"
+", ™"
+POP a number a153
+GOTO "analyse commands"
+", š"
+POP a number a154
+GOTO "analyse commands"
+", ›"
+POP a number a155
+GOTO "analyse commands"
+", œ"
+POP a number a156
+GOTO "analyse commands"
+", ž"
+POP a number a158
+GOTO "analyse commands"
+", Ÿ"
+POP a number a159
+GOTO "analyse commands"
+",  "
+POP a number a160
+GOTO "analyse commands"
+", ¡"
+POP a number a161
+GOTO "analyse commands"
+", ¢"
+POP a number a162
+GOTO "analyse commands"
+", £"
+POP a number a163
+GOTO "analyse commands"
+", ¤"
+POP a number a164
+GOTO "analyse commands"
+", ¥"
+POP a number a165
+GOTO "analyse commands"
+", ¦"
+POP a number a166
+GOTO "analyse commands"
+", §"
+POP a number a167
+GOTO "analyse commands"
+", ¨"
+POP a number a168
+GOTO "analyse commands"
+", ©"
+POP a number a169
+GOTO "analyse commands"
+", ª"
+POP a number a170
+GOTO "analyse commands"
+", «"
+POP a number a171
+GOTO "analyse commands"
+", ¬"
+POP a number a172
+GOTO "analyse commands"
+", ®"
+POP a number a174
+GOTO "analyse commands"
+", ¯"
+POP a number a175
+GOTO "analyse commands"
+", °"
+POP a number a176
+GOTO "analyse commands"
+", ±"
+POP a number a177
+GOTO "analyse commands"
+", ²"
+POP a number a178
+GOTO "analyse commands"
+", ³"
+POP a number a179
+GOTO "analyse commands"
+", ´"
+POP a number a180
+GOTO "analyse commands"
+", µ"
+POP a number a181
+GOTO "analyse commands"
+", ¶"
+POP a number a182
+GOTO "analyse commands"
+", ·"
+POP a number a183
+GOTO "analyse commands"
+", ¸"
+POP a number a184
+GOTO "analyse commands"
+", ¹"
+POP a number a185
+GOTO "analyse commands"
+", º"
+POP a number a186
+GOTO "analyse commands"
+", »"
+POP a number a187
+GOTO "analyse commands"
+", ¼"
+POP a number a188
+GOTO "analyse commands"
+", ½"
+POP a number a189
+GOTO "analyse commands"
+", ¾"
+POP a number a190
+GOTO "analyse commands"
+", ¿"
+POP a number a191
+GOTO "analyse commands"
+", À"
+POP a number a192
+GOTO "analyse commands"
+", Á"
+POP a number a193
+GOTO "analyse commands"
+", Â"
+POP a number a194
+GOTO "analyse commands"
+", Ã"
+POP a number a195
+GOTO "analyse commands"
+", Ä"
+POP a number a196
+GOTO "analyse commands"
+", Å"
+POP a number a197
+GOTO "analyse commands"
+", Æ"
+POP a number a198
+GOTO "analyse commands"
+", Ç"
+POP a number a199
+GOTO "analyse commands"
+", È"
+POP a number a200
+GOTO "analyse commands"
+", É"
+POP a number a201
+GOTO "analyse commands"
+", Ê"
+POP a number a202
+GOTO "analyse commands"
+", Ë"
+POP a number a203
+GOTO "analyse commands"
+", Ì"
+POP a number a204
+GOTO "analyse commands"
+", Í"
+POP a number a205
+GOTO "analyse commands"
+", Î"
+POP a number a206
+GOTO "analyse commands"
+", Ï"
+POP a number a207
+GOTO "analyse commands"
+", Ð"
+POP a number a208
+GOTO "analyse commands"
+", Ñ"
+POP a number a209
+GOTO "analyse commands"
+", Ò"
+POP a number a210
+GOTO "analyse commands"
+", Ó"
+POP a number a211
+GOTO "analyse commands"
+", Ô"
+POP a number a212
+GOTO "analyse commands"
+", Õ"
+POP a number a213
+GOTO "analyse commands"
+", Ö"
+POP a number a214
+GOTO "analyse commands"
+", ×"
+POP a number a215
+GOTO "analyse commands"
+", Ø"
+POP a number a216
+GOTO "analyse commands"
+", Ù"
+POP a number a217
+GOTO "analyse commands"
+", Ú"
+POP a number a218
+GOTO "analyse commands"
+", Û"
+POP a number a219
+GOTO "analyse commands"
+", Ü"
+POP a number a220
+GOTO "analyse commands"
+", Ý"
+POP a number a221
+GOTO "analyse commands"
+", Þ"
+POP a number a222
+GOTO "analyse commands"
+", ß"
+POP a number a223
+GOTO "analyse commands"
+", à"
+POP a number a224
+GOTO "analyse commands"
+", á"
+POP a number a225
+GOTO "analyse commands"
+", â"
+POP a number a226
+GOTO "analyse commands"
+", ã"
+POP a number a227
+GOTO "analyse commands"
+", ä"
+POP a number a228
+GOTO "analyse commands"
+", å"
+POP a number a229
+GOTO "analyse commands"
+", æ"
+POP a number a230
+GOTO "analyse commands"
+", ç"
+POP a number a231
+GOTO "analyse commands"
+", è"
+POP a number a232
+GOTO "analyse commands"
+", é"
+POP a number a233
+GOTO "analyse commands"
+", ê"
+POP a number a234
+GOTO "analyse commands"
+", ë"
+POP a number a235
+GOTO "analyse commands"
+", ì"
+POP a number a236
+GOTO "analyse commands"
+", í"
+POP a number a237
+GOTO "analyse commands"
+", î"
+POP a number a238
+GOTO "analyse commands"
+", ï"
+POP a number a239
+GOTO "analyse commands"
+", ð"
+POP a number a240
+GOTO "analyse commands"
+", ñ"
+POP a number a241
+GOTO "analyse commands"
+", ò"
+POP a number a242
+GOTO "analyse commands"
+", ó"
+POP a number a243
+GOTO "analyse commands"
+", ô"
+POP a number a244
+GOTO "analyse commands"
+", õ"
+POP a number a245
+GOTO "analyse commands"
+", ö"
+POP a number a246
+GOTO "analyse commands"
+", ÷"
+POP a number a247
+GOTO "analyse commands"
+", ø"
+POP a number a248
+GOTO "analyse commands"
+", ù"
+POP a number a249
+GOTO "analyse commands"
+", ú"
+POP a number a250
+GOTO "analyse commands"
+", û"
+POP a number a251
+GOTO "analyse commands"
+", ü"
+POP a number a252
+GOTO "analyse commands"
+", ý"
+POP a number a253
+GOTO "analyse commands"
+", þ"
+POP a number a254
+GOTO "analyse commands"
+", ÿ"
+POP a number a255
 GOTO "analyse commands"
 
 end
