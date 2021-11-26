@@ -11,27 +11,27 @@ INPUT commands
 OUTPUT "[all input]"
 POP instruction commands [commands]
 GOTO "input more commands" [instruction] ""
-GOTO "o command" [instruction] o
 POP a temp a[number]
 POP hundreds temp [temp]
 POP tens temp [temp]
 POP ones temp [temp]
+GOTO "o command" [instruction] o
 GOTO "s command" [instruction] s
 GOTO "di command" [instruction] d
 GOTO "di command" [instruction] i
-POP a "all input" a"[all input][instruction][newline][newline]>>"
+POP a "all input" a"[all input][instruction][newline]>>"
 GOTO "analyse commands"
 "o command"
+GOTO "skip hundreds" [hundreds] 0
 POP a "all input" a"[all input]o[newline][number][newline]>>"
 GOTO "analyse commands"
-"s command"
-POP a "all input" a"[all input]s[newline]>>"
-GOTO "square 0[ones]" [number] 00[ones]
-GOTO "square 1[ones]" [number] 01[ones]
-GOTO "square 2[ones]" [number] 02[ones]
-GOTO "square 30" [number] 030
-GOTO "square 31" [number] 031
-GOTO "to 000"
+"skip hundreds"
+GOTO "skip tens" [tens] 0
+POP a "all input" a"[all input]o[newline][tens][ones][newline]>>"
+GOTO "analyse commands"
+"skip tens"
+POP a "all input" a"[all input]o[newline][ones][newline]>>"
+GOTO "analyse commands"
 "di command"
 POP a "all input" a"[all input][instruction][newline]>>"
 POP a digit aones
@@ -39,6 +39,7 @@ GOTO "[instruction] [ones]"
 "finished with one operation"
 GOTO "completely finished" [carry] 0
 GOTO "completely finished" [digit] hundreds
+"#This is in case we have just changed tens, so we have to change hundreds."
 GOTO "digit is tens" [digit] tens
 POP a digit atens
 GOTO "[instruction] [tens]"
@@ -47,7 +48,7 @@ POP a digit ahundreds
 GOTO "[instruction] [hundreds]"
 "completely finished"
 GOTO "to 000" [hundreds][tens][ones] 256
-GOTO "to 000" [hundreds][tens][ones] 999
+GOTO "to 000" [instruction][hundreds][tens][ones] d999
 POP a number a[hundreds][tens][ones]
 "number is changed"
 POP a carry a0
@@ -135,6 +136,14 @@ GOTO "finished with one operation"
 POP a [digit] a0
 POP a carry a1
 GOTO "finished with one operation"
+"s command"
+POP a "all input" a"[all input]s[newline]>>"
+GOTO "square 0[ones]" [number] 00[ones]
+GOTO "square 1[ones]" [number] 01[ones]
+GOTO "square 2[ones]" [number] 02[ones]
+GOTO "square 30" [number] 030
+GOTO "square 31" [number] 031
+GOTO "to 000"
 "square 00"
 POP a number a000
 GOTO "analyse commands"
