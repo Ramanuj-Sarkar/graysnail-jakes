@@ -1,0 +1,161 @@
+"#DO NOT USE THIS RIGHT NOW"
+"#IT HAS NOT BEEN TESTED AT ALL"
+
+"#I use carry to indicate repetition for incrementing (9 to 0) and decrementing (0 to 9)."
+POP a carry a0
+"#This shows which number is being changed."
+POP a "which number" a1
+
+OUTPUT "Enter an integer between 0 and 999."
+INPUT num1
+
+OUTPUT "Enter another integer between 0 and 999."
+INPUT num2
+
+OUTPUT "Enter the instruction: + to add, - to subtract.
+Keep in mind that the answer cannot be larger than 999."
+INPUT "user instruction"
+
+"finished num2"
+POP a number a[num1]
+POP a "which number" a1
+POP a instruction a"user instruction"
+GOTO "subtract num2" [instruction][num1] a-000
+GOTO "begin changing number"
+"finished num1"
+POP a number a[num2]
+POP a "which number" a2
+POP a instruction a-
+GOTO "begin changing number"
+
+"#This splits the number into digits."
+"#These are easier to work with."
+"begin changing number"
+POP hundreds number [number]
+POP tens number [number]
+POP ones number [number]
+GOTO "1 to 3 digits" [tens] ""
+GOTO "2 to 3 digits" [hundreds] ""
+"now 3 digits"
+GOTO "+- command" [instruction] +
+GOTO "+- command" [instruction] -
+OUTPUT "The instruction is neither + nor -."
+GOTO end
+
+"1 to 3 digits"
+POP a number a00[ones]
+GOTO "now 3 digits"
+
+"2 to 3 digits"
+POP a number a0[tens][ones]
+GOTO "now 3 digits"
+
+"+- command"
+POP a digit aones
+"#This will go to + 1, - 1, + 2, - 2, etc. depending on what instruction and ones are."
+GOTO "[instruction] [ones]"
+"finished with one operation"
+"#If carry = 0, I can stop doing this."
+GOTO "completely finished" [carry] 0
+"#If digit is hundreds, no more changing is possible."
+GOTO "completely finished" [digit] hundreds
+"#This is in case we have just changed tens, so we have to change hundreds."
+GOTO "digit is tens" [digit] tens
+POP a digit atens
+GOTO "[instruction] [tens]"
+"digit is tens"
+POP a digit ahundreds
+GOTO "[instruction] [hundreds]"
+
+"completely finished"
+POP a number a[hundreds][tens][ones]
+"number is changed"
+POP a carry a0
+POP a num[which number] a[number]
+GOTO "finished num[which number]"
+
+"#The variable carry becomes 1 here."
+"- 0"
+POP a [digit] a9
+POP a carry a1
+GOTO "finished with one operation"
+"- 1"
+POP a [digit] a0
+POP a carry a0
+GOTO "finished with one operation"
+"- 2"
+POP a [digit] a1
+POP a carry a0
+GOTO "finished with one operation"
+"- 3"
+POP a [digit] a2
+POP a carry a0
+GOTO "finished with one operation"
+"- 4"
+POP a [digit] a3
+POP a carry a0
+GOTO "finished with one operation"
+"- 5"
+POP a [digit] a4
+POP a carry a0
+GOTO "finished with one operation"
+"- 6"
+POP a [digit] a5
+POP a carry a0
+GOTO "finished with one operation"
+"- 7"
+POP a [digit] a6
+POP a carry a0
+GOTO "finished with one operation"
+"- 8"
+POP a [digit] a7
+POP a carry a0
+GOTO "finished with one operation"
+"- 9"
+POP a [digit] a8
+POP a carry a0
+GOTO "finished with one operation"
+
+"#The variable carry becomes 1 here."
+"+ 0"
+POP a [digit] a1
+POP a carry a0
+GOTO "finished with one operation"
+"+ 1"
+POP a [digit] a2
+POP a carry a0
+GOTO "finished with one operation"
+"+ 2"
+POP a [digit] a3
+POP a carry a0
+GOTO "finished with one operation"
+"+ 3"
+POP a [digit] a4
+POP a carry a0
+GOTO "finished with one operation"
+"+ 4"
+POP a [digit] a5
+POP a carry a0
+GOTO "finished with one operation"
+"+ 5"
+POP a [digit] a6
+POP a carry a0
+GOTO "finished with one operation"
+"+ 6"
+POP a [digit] a7
+POP a carry a0
+GOTO "finished with one operation"
+"+ 7"
+POP a [digit] a8
+POP a carry a0
+GOTO "finished with one operation"
+"+ 8"
+POP a [digit] a9
+POP a carry a0
+GOTO "finished with one operation"
+"+ 9"
+POP a [digit] a0
+POP a carry a1
+GOTO "finished with one operation"
+
+end
