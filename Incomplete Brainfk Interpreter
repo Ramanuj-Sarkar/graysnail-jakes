@@ -16,6 +16,8 @@ OUTPUT "Input left bracket."
 INPUT lb
 OUTPUT "Input right bracket."
 INPUT rb
+OUTPUT "Input quotation marks."
+INPUT qm
 
 "input more commands"
 OUTPUT "[all input]"
@@ -214,7 +216,7 @@ GOTO "analyse commands"
 POP a "all input" a"[all input]!"
 GOTO "analyse commands"
 ". 034"
-POP a "all input" a"[all input]''"
+POP a "all input" a"[all input][qm]"
 GOTO "analyse commands"
 ". 035"
 POP a "all input" a"[all input]#"
@@ -881,7 +883,7 @@ GOTO "analyse commands"
 ", !"
 POP a number a033
 GOTO "analyse commands"
-", ''"
+", [qm]"
 POP a number a034
 GOTO "analyse commands"
 ", #"
