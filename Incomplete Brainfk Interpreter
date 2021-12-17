@@ -76,6 +76,7 @@ GOTO "number is changed"
 
 ". command"
 GOTO "analyse commands" [hundreds][tens] 00
+GOTO ". [number]" [number] 010
 GOTO "analyse commands" [hundreds][tens] 01
 GOTO "analyse commands" [hundreds][tens] 02
 GOTO ". [number]"
@@ -198,6 +199,10 @@ POP a carry a1
 GOTO "finished with one operation"
 
 "#These are the output commands."
+". 010"
+POP a "all input" a"[all input]
+"
+GOTO "analyse commands"
 ". 030"
 GOTO "analyse commands"
 ". 031"
