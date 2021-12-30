@@ -19,14 +19,13 @@ INPUT rb
 OUTPUT "Input quotation marks."
 INPUT qm
 
-"input more commands"
-OUTPUT "[all input]"
+OUTPUT "Input commands."
 INPUT commands
 
 "analyse commands"
 OUTPUT "[all input]"
 POP instruction commands [commands]
-GOTO "input more commands" [instruction] ""
+GOTO end [instruction] ""
 
 "#These are all the digits of the number."
 "#Temp is used in case the command is not valid."
@@ -85,9 +84,11 @@ GOTO ". [number]"
 GOTO "analyse commands"
 
 ", command"
+OUTPUT "Enter input:"
 INPUT char
 GOTO ", lb" [char] [lb]
 GOTO ", rb" [char] [rb]
+GOTO ", qm" [char] [qm]
 GOTO ", [char]"
 
 "> command"
@@ -883,7 +884,7 @@ GOTO "analyse commands"
 ", !"
 POP a number a033
 GOTO "analyse commands"
-", [qm]"
+", qm"
 POP a number a034
 GOTO "analyse commands"
 ", #"
