@@ -1,0 +1,25 @@
+INPUT parens
+POP a stack a
+"begin loop"
+POP char parens [parens]
+GOTO "open paren" [char] (
+GOTO "close paren" [char] )
+GOTO "end loop" [parens] ""
+GOTO "begin loop"
+"open paren"
+POP a stack a[stack]a
+GOTO "begin loop"
+"close paren"
+GOTO "empty stack" [stack] ""
+POP a stack [stack]
+GOTO "begin loop"
+"empty stack"
+OUTPUT "There is at least one misplaced close-paren."
+GOTO end
+"end loop"
+GOTO "good stack" [stack] ""
+OUTPUT "There are this many extra open parentheses --> [stack]"
+GOTO end
+"good stack"
+OUTPUT "These parentheses are correctly nested."
+end
