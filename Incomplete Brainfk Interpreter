@@ -10,6 +10,8 @@ POP a "left numbers" a
 POP a "right numbers" a
 "#This is where the commands which were already read or skipped go."
 POP a "left commands" a
+"# This is how the brackets are allowed to nest correctly."
+POP a "bracket stack" a
 
 "#input left bracket and right bracket"
 OUTPUT "Input left bracket."
@@ -25,6 +27,7 @@ INPUT commands
 "analyse commands"
 OUTPUT "[all input]"
 POP instruction commands [commands]
+POP a "left commands" a"[instruction][left commands]"
 GOTO end [instruction] ""
 
 "#These are all the digits of the number."
@@ -39,6 +42,8 @@ GOTO ". command" [instruction] .
 GOTO ", command" [instruction] ,
 GOTO "> command" [instruction] >
 GOTO "< command" [instruction] <
+GOTO "lb command" [instruction] [lb]
+GOTO "rb command" [instruction] [rb]
 GOTO "analyse commands"
 
 "+- command"
@@ -57,7 +62,6 @@ GOTO "[instruction] [tens]"
 "digit is tens"
 POP a digit ahundreds
 GOTO "[instruction] [hundreds]"
-
 "completely finished"
 "#256 becomes 0 and 999 becomes 255."
 GOTO "to 000" [hundreds][tens][ones] 256
@@ -66,7 +70,6 @@ POP a number a[hundreds][tens][ones]
 "number is changed"
 POP a carry a0
 GOTO "analyse commands"
-
 "#Number is just set to something else."
 "to 000"
 POP a number a000
@@ -113,6 +116,16 @@ POP a number a"[hundreds][tens][ones]"
 GOTO "analyse commands"
 "empty left"
 POP a number a000
+GOTO "analyse commands"
+
+"lb command"
+POP instruction commands [commands]
+POP a "left commands" a"[instruction][left commands]"
+GOTO "analyse commands"
+
+"rb command"
+POP instruction "left commands" "[left commands]"
+POP a commands a[instruction][commands]
 GOTO "analyse commands"
 
 "#From here on out, the code consists of single commands which do one or two operations."
