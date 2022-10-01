@@ -34,8 +34,7 @@ GOTO end [instruction] ""
 "#Temp is used in case the command is not valid."
 POP a temp a[number]
 POP hundreds temp [temp]
-POP tens temp [temp]
-POP ones temp [temp]
+POP tens ones [temp]
 GOTO "+- command" [instruction] +
 GOTO "+- command" [instruction] -
 GOTO ". command" [instruction] .
@@ -121,11 +120,33 @@ GOTO "analyse commands"
 "lb command"
 POP instruction commands [commands]
 POP a "left commands" a"[instruction][left commands]"
+GOTO "new lb" [instruction] [lb]
+GOTO "possibly end lb loop" [instruction] [rb]
+GOTO "lb command"
+"new lb"
+POP a "bracket stack" "a[bracket stack]a"
+GOTO "lb command"
+"possibly end lb loop"
+POP a "bracket stack" "[bracket stack]"
+GOTO "end lb loop" "[bracket stack]" ""
+GOTO "lb command"
+"end lb loop"
 GOTO "analyse commands"
 
 "rb command"
 POP instruction "left commands" "[left commands]"
 POP a commands a[instruction][commands]
+GOTO "new rb" [instruction] [rb]
+GOTO "possibly end rb loop" [instruction] [lb]
+GOTO "rb command"
+"new rb"
+POP a "bracket stack" "a[bracket stack]a"
+GOTO "rb command"
+"possibly end rb loop"
+POP a "bracket stack" "[bracket stack]"
+GOTO "end rb loop" "[bracket stack]" ""
+GOTO "rb command"
+"end rb loop"
 GOTO "analyse commands"
 
 "#From here on out, the code consists of single commands which do one or two operations."
