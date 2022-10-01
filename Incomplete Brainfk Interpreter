@@ -29,10 +29,14 @@ POP instruction commands [commands]
 POP a "left commands" a"[instruction][left commands]"
 OUTPUT "Left Commands: [left commands]
 Current Instruction: [instruction]
-Commands: [commands]
+Right Commands: [commands]
+
+Bracket Stack: [bracket stack]
+
 Left Numbers: [left numbers]
 Number: [number]
 Right Numbers: [right numbers]
+
 Output:[true output]"
 GOTO end [instruction] ""
 
