@@ -25,9 +25,11 @@ OUTPUT "Input commands."
 INPUT commands
 
 "analyse commands"
-OUTPUT "Output:[true output]"
 POP instruction commands [commands]
 POP a "left commands" a"[instruction][left commands]"
+OUTPUT "[left commands] [instruction] [commands]
+Number: [number]
+Output:[true output]"
 GOTO end [instruction] ""
 
 "#These are all the digits of the number."
