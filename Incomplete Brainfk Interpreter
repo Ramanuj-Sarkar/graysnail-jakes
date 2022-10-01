@@ -27,8 +27,12 @@ INPUT commands
 "analyse commands"
 POP instruction commands [commands]
 POP a "left commands" a"[instruction][left commands]"
-OUTPUT "[left commands] [instruction] [commands]
+OUTPUT "Left Commands: [left commands]
+Current Instruction: [instruction]
+Commands: [commands]
+Left Numbers: [left numbers]
 Number: [number]
+Right Numbers: [right numbers]
 Output:[true output]"
 GOTO end [instruction] ""
 
@@ -117,7 +121,8 @@ POP hundreds "left numbers" "[left numbers]"
 POP a number a"[hundreds][tens][ones]"
 GOTO "analyse commands"
 "empty left"
-POP a number a000
+OUTPUT "You cannot go further left than the beginning of the tape."
+GOTO "end"
 GOTO "analyse commands"
 
 "lb command"
