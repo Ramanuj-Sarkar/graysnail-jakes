@@ -27,6 +27,7 @@ INPUT commands
 "analyse commands"
 POP instruction commands [commands]
 POP a "left commands" a"[instruction][left commands]"
+
 OUTPUT "Left Commands: [left commands]
 Current Instruction: [instruction]
 Right Commands: [commands]
@@ -38,6 +39,8 @@ Number: [number]
 Right Numbers: [right numbers]
 
 Output:[true output]"
+INPUT ok
+
 GOTO end [instruction] ""
 
 "#These are all the digits of the number."
