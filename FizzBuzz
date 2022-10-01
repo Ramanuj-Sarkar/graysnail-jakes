@@ -1,0 +1,109 @@
+POP a "fizz count" a210
+POP a "buzz count" a43210
+POP a number a00
+POP a "printed text" a
+GOTO "start loop" a a
+
+"add newline"
+POP a number a[tens][ones]
+POP a "printed text" "a[printed text]
+"
+OUTPUT "[printed text]"
+"start loop"
+POP a "fizz and/or buzz" a0
+POP tens ones [number]
+POP a carry a0
+
+POP a digit aones
+GOTO "i[ones]" a a
+"increment finish"
+GOTO "completely finished" [carry] 0
+GOTO "print 100" [digit] tens
+POP a digit atens
+GOTO "i[tens]" a a
+"completely finished"
+
+POP "maybe zero" "fizz count" "[fizz count]"
+GOTO "print Fizz" "[maybe zero]" 0
+"done Fizz"
+POP a "fizz count" "a[fizz count][maybe zero]"
+POP a "maybe zero" aX
+
+POP "maybe zero" "buzz count" "[buzz count]"
+GOTO "print Buzz" "[maybe zero]" 0
+"done Buzz"
+POP a "buzz count" "a[buzz count][maybe zero]"
+POP a "maybe zero" aX
+
+GOTO "add newline" "[fizz and/or buzz]" 1
+
+GOTO "do not print tens" [tens] 0
+POP a "printed text" "a[printed text][tens][ones]"
+GOTO "add newline" a a
+"do not print tens"
+POP a "printed text" "a[printed text][ones]"
+GOTO "add newline" a a
+
+"print Fizz"
+POP a "printed text" "a[printed text]Fizz"
+POP a "fizz and/or buzz" a1
+GOTO "done Fizz" a a
+
+"print Buzz"
+POP a "printed text" "a[printed text]Buzz"
+POP a "fizz and/or buzz" a1
+GOTO "done Buzz" a a
+
+i0
+POP a [digit] a1
+POP a carry a0
+GOTO "increment finish" a a
+
+i1
+POP a [digit] a2
+POP a carry a0
+GOTO "increment finish" a a
+
+i2
+POP a [digit] a3
+POP a carry a0
+GOTO "increment finish" a a
+
+i3
+POP a [digit] a4
+POP a carry a0
+GOTO "increment finish" a a
+
+i4
+POP a [digit] a5
+POP a carry a0
+GOTO "increment finish" a a
+
+i5
+POP a [digit] a6
+POP a carry a0
+GOTO "increment finish" a a
+
+i6
+POP a [digit] a7
+POP a carry a0
+GOTO "increment finish" a a
+
+i7
+POP a [digit] a8
+POP a carry a0
+GOTO "increment finish" a a
+
+i8
+POP a [digit] a9
+POP a carry a0
+GOTO "increment finish" a a
+
+i9
+POP a [digit] a0
+POP a carry a1
+GOTO "increment finish" a a
+
+"print 100"
+OUTPUT "[printed text]100"
+"end"
