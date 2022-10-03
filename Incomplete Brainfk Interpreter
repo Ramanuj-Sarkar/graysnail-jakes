@@ -27,20 +27,7 @@ INPUT commands
 "analyse commands"
 POP instruction commands [commands]
 POP a "left commands" a"[instruction][left commands]"
-
-OUTPUT "Left Commands: [left commands]
-Current Instruction: [instruction]
-Right Commands: [commands]
-
-Bracket Stack: [bracket stack]
-
-Left Numbers: [left numbers]
-Number: [number]
-Right Numbers: [right numbers]
-
-Output:[true output]"
-INPUT ok
-
+OUTPUT "Output:[true output]"
 GOTO end [instruction] ""
 
 "#These are all the digits of the number."
@@ -138,20 +125,6 @@ GOTO "analyse commands"
 "start lb loop"
 POP instruction commands [commands]
 POP a "left commands" a"[instruction][left commands]"
-
-OUTPUT "Left Commands: [left commands]
-Current Instruction: [instruction]
-Right Commands: [commands]
-
-Bracket Stack: [bracket stack]
-
-Left Numbers: [left numbers]
-Number: [number]
-Right Numbers: [right numbers]
-
-Output:[true output]"
-INPUT ok
-
 GOTO "new lb" [instruction] [lb]
 GOTO "possibly end lb loop" [instruction] [rb]
 GOTO "start lb loop"
@@ -172,20 +145,6 @@ GOTO "analyse commands" [number] 000
 "start rb loop"
 POP instruction "left commands" "[left commands]"
 POP a commands a[instruction][commands]
-
-OUTPUT "Left Commands: [left commands]
-Current Instruction: [instruction]
-Right Commands: [commands]
-
-Bracket Stack: [bracket stack]
-
-Left Numbers: [left numbers]
-Number: [number]
-Right Numbers: [right numbers]
-
-Output:[true output]"
-INPUT ok
-
 GOTO "new rb" [instruction] [rb]
 GOTO "possibly end rb loop" [instruction] [lb]
 GOTO "start rb loop"
@@ -1615,5 +1574,19 @@ GOTO "analyse commands"
 ", ÿ"
 POP a number a255
 GOTO "analyse commands"
+
+"#This is debug text which I might need in the future."
+OUTPUT "Left Commands: [left commands]
+Current Instruction: [instruction]
+Right Commands: [commands]
+
+Bracket Stack: [bracket stack]
+
+Left Numbers: [left numbers]
+Number: [number]
+Right Numbers: [right numbers]
+
+Output:[true output]"
+INPUT ok
 
 end
