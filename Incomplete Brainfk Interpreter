@@ -89,6 +89,7 @@ GOTO "analyse commands"
 OUTPUT "<- Delete all non-input in the input box and input a single character."
 INPUT char
 POP char temp [char]
+GOTO "analyse commands" [char] ""
 GOTO ", lb" [char] [lb]
 GOTO ", rb" [char] [rb]
 GOTO ", qm" [char] [qm]
@@ -923,6 +924,10 @@ POP a "true output" a"[true output]ÿ"
 GOTO "analyse commands"
 
 "#These are the input commands."
+", 
+"
+POP a number a010
+GOTO "analyse commands"
 ",  "
 POP a number a032
 GOTO "analyse commands"
