@@ -12,15 +12,14 @@ INPUT num1
 OUTPUT "Enter another integer between 0 and 999."
 INPUT num2
 
-OUTPUT "Enter the instruction: + to add, - to subtract.
-Keep in mind that the answer cannot be larger than 999."
+OUTPUT "Enter the instruction: + to add, - to subtract."
 INPUT "user instruction"
 
 "finished num2"
 POP a number a[num1]
 POP a "which number" a1
 POP a instruction a"user instruction"
-GOTO "subtract num2" [instruction][num1] a-000
+GOTO "subtract num2" [instruction][num1] -000
 GOTO "begin changing number"
 "finished num1"
 POP a number a[num2]
