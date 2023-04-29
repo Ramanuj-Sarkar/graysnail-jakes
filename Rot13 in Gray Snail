@@ -1,0 +1,276 @@
+POP a rot13text a
+
+"loop beginning"
+OUTPUT "[rot13text]
+This is the Gray Snail ROT-13 encoder.
+Please enter text to be encoded."
+INPUT plaintext
+POP a rot13text a
+
+"not done"
+POP char plaintext [plaintext]
+GOTO "rotA" [char] A
+GOTO "rota" [char] a
+GOTO "rotB" [char] B
+GOTO "rotb" [char] b
+GOTO "rotC" [char] C
+GOTO "rotc" [char] c
+GOTO "rotD" [char] D
+GOTO "rotd" [char] d
+GOTO "rotE" [char] E
+GOTO "rote" [char] e
+GOTO "rotF" [char] F
+GOTO "rotf" [char] f
+GOTO "rotG" [char] G
+GOTO "rotg" [char] g
+GOTO "rotH" [char] H
+GOTO "roth" [char] h
+GOTO "rotI" [char] I
+GOTO "roti" [char] i
+GOTO "rotJ" [char] J
+GOTO "rotj" [char] j
+GOTO "rotK" [char] K
+GOTO "rotk" [char] k
+GOTO "rotL" [char] L
+GOTO "rotl" [char] l
+GOTO "rotM" [char] M
+GOTO "rotm" [char] m
+GOTO "rotN" [char] N
+GOTO "rotn" [char] n
+GOTO "rotO" [char] O
+GOTO "roto" [char] o
+GOTO "rotP" [char] P
+GOTO "rotp" [char] p
+GOTO "rotQ" [char] Q
+GOTO "rotq" [char] q
+GOTO "rotR" [char] R
+GOTO "rotr" [char] r
+GOTO "rotS" [char] S
+GOTO "rots" [char] s
+GOTO "rotT" [char] T
+GOTO "rott" [char] t
+GOTO "rotU" [char] U
+GOTO "rotu" [char] u
+GOTO "rotV" [char] V
+GOTO "rotv" [char] v
+GOTO "rotW" [char] W
+GOTO "rotw" [char] w
+GOTO "rotX" [char] X
+GOTO "rotx" [char] x
+GOTO "rotY" [char] Y
+GOTO "roty" [char] y
+GOTO "rotZ" [char] Z
+GOTO "rotz" [char] z
+POP a rot13text a[rot13text][char]
+"char rotated"
+OUTPUT [rot13text]
+GOTO "loop beginning" [plaintext] ""
+GOTO "not done" a a
+
+"rotA"
+POP a rot13text a[rot13text]N
+GOTO "char rotated"
+
+"rota"
+POP a rot13text a[rot13text]n
+GOTO "char rotated"
+
+"rotB"
+POP a rot13text a[rot13text]O
+GOTO "char rotated"
+
+"rotb"
+POP a rot13text a[rot13text]o
+GOTO "char rotated"
+
+"rotC"
+POP a rot13text a[rot13text]P
+GOTO "char rotated"
+
+"rotc"
+POP a rot13text a[rot13text]p
+GOTO "char rotated"
+
+"rotD"
+POP a rot13text a[rot13text]Q
+GOTO "char rotated"
+
+"rotd"
+POP a rot13text a[rot13text]q
+GOTO "char rotated"
+
+"rotE"
+POP a rot13text a[rot13text]R
+GOTO "char rotated"
+
+"rote"
+POP a rot13text a[rot13text]r
+GOTO "char rotated"
+
+"rotF"
+POP a rot13text a[rot13text]S
+GOTO "char rotated"
+
+"rotf"
+POP a rot13text a[rot13text]s
+GOTO "char rotated"
+
+"rotG"
+POP a rot13text a[rot13text]T
+GOTO "char rotated"
+
+"rotg"
+POP a rot13text a[rot13text]t
+GOTO "char rotated"
+
+"rotH"
+POP a rot13text a[rot13text]U
+GOTO "char rotated"
+
+"roth"
+POP a rot13text a[rot13text]u
+GOTO "char rotated"
+
+"rotI"
+POP a rot13text a[rot13text]V
+GOTO "char rotated"
+
+"roti"
+POP a rot13text a[rot13text]v
+GOTO "char rotated"
+
+"rotJ"
+POP a rot13text a[rot13text]W
+GOTO "char rotated"
+
+"rotj"
+POP a rot13text a[rot13text]w
+GOTO "char rotated"
+
+"rotK"
+POP a rot13text a[rot13text]X
+GOTO "char rotated"
+
+"rotk"
+POP a rot13text a[rot13text]x
+GOTO "char rotated"
+
+"rotL"
+POP a rot13text a[rot13text]Y
+GOTO "char rotated"
+
+"rotl"
+POP a rot13text a[rot13text]y
+GOTO "char rotated"
+
+"rotM"
+POP a rot13text a[rot13text]Z
+GOTO "char rotated"
+
+"rotm"
+POP a rot13text a[rot13text]z
+GOTO "char rotated"
+
+"rotN"
+POP a rot13text a[rot13text]A
+GOTO "char rotated"
+
+"rotn"
+POP a rot13text a[rot13text]a
+GOTO "char rotated"
+
+"rotO"
+POP a rot13text a[rot13text]B
+GOTO "char rotated"
+
+"roto"
+POP a rot13text a[rot13text]b
+GOTO "char rotated"
+
+"rotP"
+POP a rot13text a[rot13text]C
+GOTO "char rotated"
+
+"rotp"
+POP a rot13text a[rot13text]c
+GOTO "char rotated"
+
+"rotQ"
+POP a rot13text a[rot13text]D
+GOTO "char rotated"
+
+"rotq"
+POP a rot13text a[rot13text]d
+GOTO "char rotated"
+
+"rotR"
+POP a rot13text a[rot13text]E
+GOTO "char rotated"
+
+"rotr"
+POP a rot13text a[rot13text]e
+GOTO "char rotated"
+
+"rotS"
+POP a rot13text a[rot13text]F
+GOTO "char rotated"
+
+"rots"
+POP a rot13text a[rot13text]f
+GOTO "char rotated"
+
+"rotT"
+POP a rot13text a[rot13text]G
+GOTO "char rotated"
+
+"rott"
+POP a rot13text a[rot13text]g
+GOTO "char rotated"
+
+"rotU"
+POP a rot13text a[rot13text]H
+GOTO "char rotated"
+
+"rotu"
+POP a rot13text a[rot13text]h
+GOTO "char rotated"
+
+"rotV"
+POP a rot13text a[rot13text]I
+GOTO "char rotated"
+
+"rotv"
+POP a rot13text a[rot13text]i
+GOTO "char rotated"
+
+"rotW"
+POP a rot13text a[rot13text]J
+GOTO "char rotated"
+
+"rotw"
+POP a rot13text a[rot13text]j
+GOTO "char rotated"
+
+"rotX"
+POP a rot13text a[rot13text]K
+GOTO "char rotated"
+
+"rotx"
+POP a rot13text a[rot13text]k
+GOTO "char rotated"
+
+"rotY"
+POP a rot13text a[rot13text]L
+GOTO "char rotated"
+
+"roty"
+POP a rot13text a[rot13text]l
+GOTO "char rotated"
+
+"rotZ"
+POP a rot13text a[rot13text]M
+GOTO "char rotated"
+
+"rotz"
+POP a rot13text a[rot13text]m
+GOTO "char rotated"
