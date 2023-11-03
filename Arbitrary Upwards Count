@@ -1,0 +1,107 @@
+POP a reversed_string a
+POP a incremented_number a
+
+OUTPUT "Where do you want to start from?"
+INPUT original_string
+POP a reversing_name a"starting_number"
+GOTO "begin string reversal loop" a a
+"exit starting_number loop"
+
+OUTPUT "How high do you want to count?"
+INPUT original_string
+POP a reversing_name a"highest_number"
+GOTO "begin string reversal loop" a a
+"exit highest_number loop"
+
+POP a current_number a[starting_number]
+
+"begin incrementing loop"
+POP a carry a1
+POP a original_string a[current_number]
+POP a reversing_name a"displayed_number"
+GOTO "begin string reversal loop" a a
+"exit displayed_number loop"
+
+OUTPUT "Displayed Number: [displayed_number]"
+GOTO end [current_number] [highest_number]
+
+POP a incremented_number a
+"begin single increment"
+POP digit current_number [current_number]
+
+GOTO "+[digit]" [carry] 1
+"added"
+POP a incremented_number a[incremented_number][digit]
+GOTO "begin single increment" [carry] 1
+GOTO "end single increment" [current_number] ""
+GOTO "begin single increment" a a
+"end single increment"
+
+POP a current_number a[incremented_number]
+
+GOTO "begin incrementing loop" a a
+
+GOTO end a a
+
+"begin string reversal loop"
+POP char original_string [original_string]
+POP a reversed_string a[char][reversed_string]
+GOTO "exit reversal loop" "" [original_string]
+GOTO "begin string reversal loop" a a
+"exit reversal loop"
+POP a [reversing_name] a[reversed_string]
+POP a reversed_string a
+GOTO "exit [reversing_name] loop" a a
+
+"+"
+"+0"
+POP a digit a1
+POP a carry a0
+GOTO "added" a a
+
+"+1"
+POP a digit a2
+POP a carry a0
+GOTO "added" a a
+
+"+2"
+POP a digit a3
+POP a carry a0
+GOTO "added" a a
+
+"+3"
+POP a digit a4
+POP a carry a0
+GOTO "added" a a
+
+"+4"
+POP a digit a5
+POP a carry a0
+GOTO "added" a a
+
+"+5"
+POP a digit a6
+POP a carry a0
+GOTO "added" a a
+
+"+6"
+POP a digit a7
+POP a carry a0
+GOTO "added" a a
+
+"+7"
+POP a digit a8
+POP a carry a0
+GOTO "added" a a
+
+"+8"
+POP a digit a9
+POP a carry a0
+GOTO "added" a a
+
+"+9"
+POP a digit a0
+POP a carry a1
+GOTO "added" a a
+
+end
