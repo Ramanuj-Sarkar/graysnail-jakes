@@ -1,3 +1,9 @@
+"This interpreter actually works for almost all the inputs I tried."
+"It doesn't work on the obscure bug test in http://www.brainfuck.org/tests.b"
+"I want to fix the bug at some point."
+"It's also extremely slow, so it might not work on some other test."
+"I might add bracket checking and hexadecimal to this interpreter at some point."
+
 "This is the number entered."
 POP a number a000
 "#I use carry to indicate repetition for incrementing (9 to 0) and decrementing (0 to 9)."
