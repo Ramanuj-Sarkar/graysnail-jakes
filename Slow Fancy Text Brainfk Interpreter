@@ -1,8 +1,7 @@
 "This interpreter actually works for almost all the inputs I tried."
-"It doesn't work on the obscure bug test in http://www.brainfuck.org/tests.b"
-"I want to fix the bug at some point."
+"It even works for the obscure bug text now."
 "It's also extremely slow, so it might not work on some other test."
-"I might add bracket checking and hexadecimal to this interpreter at some point."
+"I might add bracket checking and hexadecimal to another interpreter at some point."
 
 "This is the number entered."
 POP a number a000
@@ -33,7 +32,19 @@ INPUT commands
 "analyse commands"
 POP instruction commands [commands]
 POP a "left commands" a"[instruction][left commands]"
-OUTPUT "Output:[true output]"
+
+OUTPUT "Left Commands: [left commands]
+Current Instruction: [instruction]
+Right Commands: [commands]
+
+Bracket Stack: [bracket stack]
+
+Left Numbers: [left numbers]
+Number: [number]
+Right Numbers: [right numbers]
+
+Output:[true output]"
+
 GOTO end [instruction] ""
 
 "#These are all the digits of the number."
@@ -143,8 +154,6 @@ POP a "bracket stack" "[bracket stack]"
 GOTO "end lb loop" "[bracket stack]" ""
 GOTO "start lb loop"
 "end lb loop"
-POP instruction commands [commands]
-POP a "left commands" a"[instruction][left commands]"
 GOTO "analyse commands"
 
 "rb command"
